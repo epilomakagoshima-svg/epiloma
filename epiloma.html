@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>epiloma kagoshima | 肌を育てるニキビ・肌質改善専門サロン</title>
+  <title>EPILOMA | ニキビ・肌質改善 肌育専門サロン｜鹿児島市宇宿</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Serif+JP:wght@300;400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green: #7a9e7e;
-      --green-light: #c8deca;
-      --green-pale: #f0f5f0;
-      --gold: #c9a96e;
-      --gold-light: #e8d5b0;
-      --cream: #fdf9f5;
-      --dark: #2d2d2d;
-      --mid: #6b6b6b;
-      --pink: #fdf0ec;
-      --white: #ffffff;
-      --border: #e8e4df;
+      --green:       #6a9b6e;
+      --green-mid:   #5a8a5e;
+      --green-light: #b8d8bc;
+      --green-pale:  #eaf3eb;
+      --green-deep:  #3d6b42;
+      --gold:        #c9a96e;
+      --gold-light:  #e8d5b0;
+      --cream:       #f8faf8;
+      --dark:        #2a2e2a;
+      --mid:         #5a6b5a;
+      --white:       #ffffff;
+      --border:      #d8e8d8;
     }
 
     html { scroll-behavior: smooth; }
@@ -35,682 +36,389 @@
 
     /* ─── HEADER ─── */
     header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 48px;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
 
     .logo {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      letter-spacing: 0.22em;
-      color: var(--dark);
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      line-height: 1.2;
+      font-size: 1.6rem; letter-spacing: 0.25em;
+      color: var(--green-deep); text-decoration: none;
+      display: flex; flex-direction: column; line-height: 1.2;
     }
-    .logo .sub { font-size: 0.55rem; letter-spacing: 0.25em; color: var(--mid); font-family: 'Noto Sans JP', sans-serif; margin-top: 2px; }
+    .logo .sub { font-size: 0.52rem; letter-spacing: 0.22em; color: var(--mid); font-family: 'Noto Sans JP', sans-serif; margin-top: 3px; }
 
-    nav { display: flex; gap: 32px; }
-    nav a { font-size: 0.75rem; letter-spacing: 0.18em; color: var(--mid); text-decoration: none; transition: color 0.3s; }
+    nav { display: flex; gap: 30px; }
+    nav a { font-size: 0.74rem; letter-spacing: 0.18em; color: var(--mid); text-decoration: none; transition: color 0.3s; }
     nav a:hover { color: var(--green); }
 
     .nav-reserve {
-      font-size: 0.75rem; letter-spacing: 0.15em;
-      padding: 10px 22px;
-      background: var(--green);
-      color: var(--white);
-      text-decoration: none;
-      border-radius: 2px;
-      transition: background 0.3s;
+      font-size: 0.74rem; letter-spacing: 0.15em; padding: 10px 22px;
+      background: var(--green); color: var(--white);
+      text-decoration: none; border-radius: 2px; transition: background 0.3s;
     }
-    .nav-reserve:hover { background: #668c6b; }
+    .nav-reserve:hover { background: var(--green-mid); }
 
     /* ─── HERO ─── */
     #hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 72px;
+      min-height: 100vh; display: grid;
+      grid-template-columns: 1fr 1fr; padding-top: 70px;
     }
 
     .hero-left {
       background: var(--cream);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      display: flex; flex-direction: column; justify-content: center;
       padding: 72px 60px;
     }
 
     .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.7rem;
-      letter-spacing: 0.22em;
-      color: var(--green);
-      margin-bottom: 32px;
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.7rem; letter-spacing: 0.2em; color: var(--green);
+      margin-bottom: 28px;
     }
-    .hero-tag::before {
-      content: '';
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--green);
-    }
+    .hero-tag::before { content: ''; display: block; width: 28px; height: 1px; background: var(--green); }
 
     .hero-title {
       font-family: 'Noto Serif JP', serif;
-      font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-      font-weight: 300;
-      line-height: 1.65;
-      letter-spacing: 0.08em;
-      color: var(--dark);
-      margin-bottom: 24px;
+      font-size: clamp(1.7rem, 3vw, 2.7rem);
+      font-weight: 300; line-height: 1.75;
+      letter-spacing: 0.08em; color: var(--dark); margin-bottom: 24px;
     }
+    .hero-title em { font-style: normal; color: var(--green-deep); border-bottom: 2px solid var(--green-light); }
 
-    .hero-title em {
-      font-style: normal;
-      color: var(--green);
-      border-bottom: 1px solid var(--green-light);
-    }
-
-    .hero-desc {
-      font-size: 0.88rem;
-      color: var(--mid);
-      line-height: 2.2;
-      margin-bottom: 40px;
-      max-width: 400px;
-    }
+    .hero-desc { font-size: 0.87rem; color: var(--mid); line-height: 2.2; margin-bottom: 36px; max-width: 400px; }
 
     .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
 
     .btn-primary {
-      display: inline-block; padding: 15px 36px;
+      display: inline-block; padding: 14px 34px;
       background: var(--green); color: var(--white);
       text-decoration: none; font-size: 0.8rem;
-      letter-spacing: 0.18em; border-radius: 2px;
-      transition: background 0.3s;
+      letter-spacing: 0.18em; border-radius: 2px; transition: background 0.3s;
     }
-    .btn-primary:hover { background: #668c6b; }
+    .btn-primary:hover { background: var(--green-mid); }
 
     .btn-outline {
-      display: inline-block; padding: 15px 36px;
+      display: inline-block; padding: 14px 34px;
       border: 1px solid var(--green); color: var(--green);
       text-decoration: none; font-size: 0.8rem;
-      letter-spacing: 0.18em; border-radius: 2px;
-      transition: all 0.3s;
+      letter-spacing: 0.18em; border-radius: 2px; transition: all 0.3s;
     }
     .btn-outline:hover { background: var(--green); color: var(--white); }
 
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-      background: #1a1a1a;
-    }
-
-    .hero-right img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center top;
-      display: block; filter: brightness(0.9);
-    }
+    .hero-right { position: relative; overflow: hidden; background: #1a1a1a; }
+    .hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: brightness(0.88) saturate(1.1); }
 
     .hero-award {
-      position: absolute;
-      bottom: 40px; right: 40px;
-      background: var(--gold);
-      border-radius: 50%;
-      width: 120px; height: 120px;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
+      position: absolute; bottom: 36px; right: 36px;
+      background: var(--green-deep); border-radius: 50%;
+      width: 118px; height: 118px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
       text-align: center; padding: 10px;
-      box-shadow: 0 8px 32px rgba(201,169,110,0.4);
+      box-shadow: 0 8px 32px rgba(61,107,66,0.45);
+      border: 2px solid rgba(255,255,255,0.2);
     }
-    .hero-award .yr { font-size: 0.58rem; color: rgba(255,255,255,0.9); letter-spacing: 0.1em; }
-    .hero-award .no { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; color: white; line-height: 1; }
-    .hero-award .lbl { font-size: 0.55rem; color: rgba(255,255,255,0.9); line-height: 1.7; margin-top: 2px; letter-spacing: 0.06em; }
+    .hero-award .yr  { font-size: 0.56rem; color: rgba(255,255,255,0.88); letter-spacing: 0.1em; }
+    .hero-award .no  { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: white; line-height: 1; }
+    .hero-award .lbl { font-size: 0.52rem; color: rgba(255,255,255,0.88); line-height: 1.75; margin-top: 2px; letter-spacing: 0.05em; }
+
+    .rea-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 10px 18px; margin-top: 28px;
+      border: 1px solid var(--green-light);
+      background: var(--green-pale);
+    }
+    .rea-badge .icon { font-size: 1rem; }
+    .rea-badge .text { font-size: 0.7rem; letter-spacing: 0.12em; color: var(--green-deep); }
 
     /* ─── TROUBLE ─── */
-    #trouble {
-      background: var(--white);
-      padding: 88px 48px;
-      text-align: center;
-    }
+    #trouble { background: var(--white); padding: 96px 48px; text-align: center; }
 
     .trouble-lead {
       font-family: 'Noto Serif JP', serif;
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
-      font-weight: 300;
-      letter-spacing: 0.12em;
-      color: var(--dark);
-      margin-bottom: 48px;
-      line-height: 2;
+      font-size: clamp(1.05rem, 1.9vw, 1.45rem);
+      font-weight: 300; letter-spacing: 0.12em;
+      color: var(--dark); margin-bottom: 44px; line-height: 2;
     }
-
-    .trouble-lead span { color: var(--green); border-bottom: 1px solid var(--green-light); }
+    .trouble-lead span { color: var(--green-deep); border-bottom: 1px solid var(--green-light); }
 
     .trouble-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      max-width: 800px;
-      margin: 0 auto 48px;
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 10px; max-width: 780px; margin: 0 auto 44px;
     }
 
     .trouble-item {
-      background: var(--green-pale);
-      border: 1px solid var(--green-light);
-      padding: 12px 24px;
-      font-size: 0.85rem;
-      color: var(--dark);
-      letter-spacing: 0.1em;
-      border-radius: 40px;
-      position: relative;
+      background: var(--green-pale); border: 1px solid var(--green-light);
+      padding: 10px 22px; font-size: 0.83rem; color: var(--dark);
+      letter-spacing: 0.1em; border-radius: 40px;
     }
-
     .trouble-item::before { content: "✓ "; color: var(--green); font-weight: bold; }
 
     .trouble-catch {
       font-family: 'Noto Serif JP', serif;
-      font-size: clamp(1rem, 1.8vw, 1.3rem);
-      color: var(--mid);
-      letter-spacing: 0.15em;
-      font-weight: 300;
-      line-height: 2.2;
+      font-size: clamp(0.95rem, 1.7vw, 1.25rem);
+      color: var(--mid); letter-spacing: 0.15em; font-weight: 300; line-height: 2.2;
+    }
+    .trouble-catch strong {
+      color: var(--green-deep); font-weight: 400; display: block;
+      font-size: clamp(1.1rem, 2vw, 1.6rem); margin-top: 8px;
     }
 
-    .trouble-catch strong {
-      color: var(--green);
-      font-weight: 400;
-      display: block;
-      font-size: clamp(1.2rem, 2.2vw, 1.7rem);
-      margin-top: 8px;
+    /* ─── KNOWLEDGE ─── */
+    #knowledge {
+      background: var(--green-pale); padding: 80px 48px; text-align: center;
     }
+
+    .knowledge-box {
+      max-width: 760px; margin: 0 auto;
+      background: var(--white); border: 1px solid var(--border);
+      border-top: 4px solid var(--green); padding: 48px 48px;
+    }
+
+    .knowledge-tag {
+      display: inline-block; font-size: 0.68rem; letter-spacing: 0.2em;
+      color: var(--green); border: 1px solid var(--green-light);
+      padding: 4px 14px; border-radius: 20px; margin-bottom: 20px;
+    }
+
+    .knowledge-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-weight: 300; letter-spacing: 0.12em; color: var(--dark); margin-bottom: 24px; line-height: 1.7;
+    }
+
+    .knowledge-title em { font-style: normal; color: var(--green-deep); }
+
+    .knowledge-body { font-size: 0.87rem; color: var(--mid); line-height: 2.4; text-align: left; }
+    .knowledge-body strong { color: var(--green-deep); font-weight: 400; }
 
     /* ─── AWARD BAND ─── */
     #award-band {
-      background: var(--dark);
-      padding: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 48px;
-      flex-wrap: wrap;
+      background: var(--green-deep); padding: 44px 48px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 48px; flex-wrap: wrap;
     }
 
     .band-item { text-align: center; color: var(--white); }
-    .band-item .en { font-family: 'Cormorant Garamond', serif; font-size: 0.75rem; letter-spacing: 0.35em; color: var(--gold); display: block; margin-bottom: 8px; text-transform: uppercase; }
-    .band-item .main { font-family: 'Noto Serif JP', serif; font-size: clamp(0.95rem, 1.8vw, 1.2rem); letter-spacing: 0.1em; }
-    .band-item .sub { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-top: 4px; letter-spacing: 0.1em; }
-    .band-sep { width: 1px; height: 60px; background: rgba(201,169,110,0.3); }
+    .band-item .en { font-family: 'Cormorant Garamond', serif; font-size: 0.74rem; letter-spacing: 0.35em; color: var(--green-light); display: block; margin-bottom: 8px; text-transform: uppercase; }
+    .band-item .main { font-family: 'Noto Serif JP', serif; font-size: clamp(0.9rem, 1.7vw, 1.15rem); letter-spacing: 0.1em; }
+    .band-item .sub { font-size: 0.73rem; color: rgba(255,255,255,0.55); margin-top: 4px; letter-spacing: 0.1em; }
+    .band-sep { width: 1px; height: 56px; background: rgba(255,255,255,0.18); }
 
     /* ─── CONCEPT ─── */
     #concept { background: var(--cream); padding: 100px 48px; }
 
     .concept-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      max-width: 1100px;
-      margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      max-width: 1100px; margin: 0 auto;
     }
 
-    .concept-img {
-      overflow: hidden;
-      min-height: 520px;
-    }
-    .concept-img img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform 0.7s ease;
-    }
+    .concept-img { overflow: hidden; min-height: 520px; }
+    .concept-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
     .concept-img:hover img { transform: scale(1.04); }
 
     .concept-text {
-      padding: 64px 56px;
-      background: var(--white);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 64px 56px; background: var(--white);
+      display: flex; flex-direction: column; justify-content: center;
+      border-top: 4px solid var(--green);
     }
 
     .section-label {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.38em;
-      color: var(--green);
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 20px;
+      font-family: 'Cormorant Garamond', serif; font-size: 0.74rem;
+      letter-spacing: 0.38em; color: var(--green); text-transform: uppercase;
+      display: block; margin-bottom: 18px;
     }
 
     .section-title {
       font-family: 'Noto Serif JP', serif;
-      font-size: clamp(1.3rem, 2.2vw, 1.9rem);
-      font-weight: 300;
-      letter-spacing: 0.12em;
-      color: var(--dark);
-      line-height: 1.7;
-      margin-bottom: 28px;
+      font-size: clamp(1.25rem, 2.1vw, 1.85rem);
+      font-weight: 300; letter-spacing: 0.12em;
+      color: var(--dark); line-height: 1.75; margin-bottom: 24px;
     }
 
-    .section-divider { width: 40px; height: 1px; background: var(--green); margin-bottom: 28px; }
+    .section-divider { width: 36px; height: 2px; background: var(--green); margin-bottom: 24px; }
 
-    .concept-text p {
-      font-size: 0.88rem;
-      color: var(--mid);
-      line-height: 2.4;
-      margin-bottom: 18px;
-    }
-
-    .concept-text p strong { color: var(--dark); font-weight: 400; }
+    .concept-text p { font-size: 0.87rem; color: var(--mid); line-height: 2.4; margin-bottom: 16px; }
+    .concept-text p strong { color: var(--green-deep); font-weight: 400; }
 
     /* ─── SKIN NURTURE ─── */
-    #skin-nurture {
-      background: var(--green-pale);
-      padding: 100px 48px;
-      text-align: center;
-    }
+    #skin-nurture { background: var(--green-pale); padding: 100px 48px; }
 
-    .nurture-header { margin-bottom: 64px; }
-    .nurture-header .section-label { display: block; margin: 0 auto 20px; }
-    .nurture-header .section-title { text-align: center; }
-    .nurture-header .section-divider { margin: 0 auto 28px; }
-    .nurture-lead { font-size: 0.9rem; color: var(--mid); max-width: 520px; margin: 0 auto; line-height: 2.2; }
+    .nurture-header { text-align: center; margin-bottom: 60px; }
+    .nurture-header .section-divider { margin: 0 auto 0; }
+    .nurture-lead { font-size: 0.89rem; color: var(--mid); max-width: 500px; margin: 0 auto; line-height: 2.2; text-align: center; }
 
     .nurture-steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      max-width: 1000px;
-      margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 20px; max-width: 1000px; margin: 0 auto;
     }
 
     .nurture-step {
-      background: var(--white);
-      padding: 48px 32px;
-      text-align: center;
+      background: var(--white); padding: 44px 28px; text-align: center;
       border-top: 3px solid var(--green);
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .nurture-step:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.07); }
+    .nurture-step:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(106,155,110,0.15); }
 
-    .step-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.8rem;
-      color: var(--green-light);
-      line-height: 1;
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    .step-icon { font-size: 2.2rem; margin-bottom: 16px; display: block; }
-
-    .step-title {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 1rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      color: var(--dark);
-      margin-bottom: 12px;
-    }
-
-    .step-desc { font-size: 0.82rem; color: var(--mid); line-height: 2; }
+    .step-num { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; color: var(--green-light); line-height: 1; margin-bottom: 14px; display: block; }
+    .step-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+    .step-title { font-family: 'Noto Serif JP', serif; font-size: 0.98rem; font-weight: 400; letter-spacing: 0.1em; color: var(--dark); margin-bottom: 10px; }
+    .step-desc { font-size: 0.8rem; color: var(--mid); line-height: 2; }
 
     /* ─── MENU ─── */
     #menu { background: var(--white); padding: 100px 48px; }
 
-    .menu-header { text-align: center; margin-bottom: 64px; }
-    .menu-header .section-label { display: block; }
-    .menu-header .section-divider { margin: 0 auto 28px; }
+    .menu-header { text-align: center; margin-bottom: 60px; }
+    .menu-header .section-divider { margin: 0 auto 0; }
 
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 1100px; margin: 0 auto; }
 
-    .menu-card {
-      background: var(--cream);
-      padding: 44px 32px;
-      transition: background 0.3s;
-      cursor: default;
-    }
-    .menu-card:hover { background: var(--green-pale); }
+    .menu-card { background: var(--green-pale); padding: 40px 28px; transition: background 0.3s; }
+    .menu-card:hover { background: #daeada; }
 
-    .menu-category {
-      font-size: 0.68rem;
-      letter-spacing: 0.25em;
-      color: var(--green);
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .menu-name {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      color: var(--dark);
-      margin-bottom: 12px;
-      line-height: 1.6;
-    }
-
-    .menu-desc { font-size: 0.8rem; color: var(--mid); line-height: 2; margin-bottom: 20px; }
-
-    .menu-price {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      color: var(--dark);
-    }
-    .menu-price small { font-family: 'Noto Sans JP', sans-serif; font-size: 0.7rem; color: var(--mid); }
-
-    .menu-tag {
-      display: inline-block;
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      padding: 3px 10px;
-      background: var(--green);
-      color: var(--white);
-      border-radius: 20px;
-      margin-bottom: 8px;
-    }
+    .menu-tag { display: inline-block; font-size: 0.64rem; letter-spacing: 0.12em; padding: 3px 10px; background: var(--green); color: var(--white); border-radius: 20px; margin-bottom: 10px; }
+    .menu-name { font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 400; letter-spacing: 0.1em; color: var(--dark); margin-bottom: 10px; line-height: 1.6; }
+    .menu-category { font-size: 0.65rem; letter-spacing: 0.22em; color: var(--green); text-transform: uppercase; margin-bottom: 10px; display: block; }
+    .menu-desc { font-size: 0.79rem; color: var(--mid); line-height: 2; margin-bottom: 18px; }
+    .menu-price { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--dark); }
+    .menu-price small { font-family: 'Noto Sans JP', sans-serif; font-size: 0.68rem; color: var(--mid); }
 
     /* ─── STAFF ─── */
     #staff { background: var(--cream); padding: 100px 48px; }
 
     .staff-inner {
-      display: grid;
-      grid-template-columns: 400px 1fr;
-      max-width: 1000px;
-      margin: 0 auto;
-      border: 1px solid var(--border);
-      overflow: hidden;
+      display: grid; grid-template-columns: 400px 1fr;
+      max-width: 1000px; margin: 0 auto;
+      border: 1px solid var(--border); overflow: hidden;
     }
 
-    .staff-img {
-      position: relative;
-      height: 540px;
-      overflow: hidden;
-    }
-    .staff-img img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center top;
-      filter: brightness(0.93) saturate(1.05);
-    }
+    .staff-img { position: relative; height: 540px; overflow: hidden; }
+    .staff-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: brightness(0.93) saturate(1.05); }
 
     .staff-img-overlay {
       position: absolute; bottom: 0; left: 0; right: 0;
       padding: 20px 24px;
-      background: linear-gradient(transparent, rgba(45,45,45,0.65));
+      background: linear-gradient(transparent, rgba(45,70,45,0.7));
     }
-    .staff-img-overlay .name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; letter-spacing: 0.2em; color: white; display: block; }
-    .staff-img-overlay .tag { font-size: 0.65rem; letter-spacing: 0.15em; color: rgba(255,255,255,0.8); margin-top: 3px; display: block; }
+    .staff-img-overlay .name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; letter-spacing: 0.2em; color: white; display: block; }
+    .staff-img-overlay .tag  { font-size: 0.64rem; letter-spacing: 0.15em; color: rgba(255,255,255,0.82); margin-top: 3px; display: block; }
 
-    .staff-body {
-      padding: 52px 48px;
-      background: var(--white);
-      display: flex; flex-direction: column; justify-content: center;
-    }
+    .staff-body { padding: 52px 48px; background: var(--white); display: flex; flex-direction: column; justify-content: center; }
+    .staff-body p { font-size: 0.86rem; color: var(--mid); line-height: 2.4; margin-bottom: 14px; }
 
-    .staff-body p { font-size: 0.87rem; color: var(--mid); line-height: 2.4; margin-bottom: 16px; }
-
-    .staff-awards {
-      margin-top: 20px;
-      padding: 20px 22px;
-      border-left: 2px solid var(--gold);
-      background: var(--cream);
-    }
-    .staff-awards li {
-      font-size: 0.8rem; color: var(--mid);
-      line-height: 2; list-style: none;
-    }
-    .staff-awards li::before { content: "✦ "; color: var(--gold); font-size: 0.68rem; }
+    .staff-awards { margin-top: 20px; padding: 18px 20px; border-left: 2px solid var(--green); background: var(--green-pale); }
+    .staff-awards li { font-size: 0.79rem; color: var(--mid); line-height: 2; list-style: none; }
+    .staff-awards li::before { content: "✦ "; color: var(--green); font-size: 0.67rem; }
 
     /* ─── VOICE ─── */
-    #voice { background: var(--pink); padding: 100px 48px; }
+    #voice { background: var(--green-pale); padding: 100px 48px; }
 
-    .voice-header { text-align: center; margin-bottom: 64px; }
-    .voice-header .section-label { display: block; }
+    .voice-header { text-align: center; margin-bottom: 60px; }
     .voice-header .section-divider { margin: 0 auto 0; }
 
-    .voice-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    .voice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto; }
 
-    .voice-card {
-      background: var(--white);
-      padding: 36px 28px;
-      border-radius: 2px;
-      position: relative;
-    }
+    .voice-card { background: var(--white); padding: 32px 26px; border-top: 3px solid var(--green); position: relative; }
+    .voice-card::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; color: var(--green-light); position: absolute; top: 6px; left: 18px; line-height: 1; }
 
-    .voice-card::before {
-      content: '"';
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 5rem;
-      color: var(--green-light);
-      position: absolute;
-      top: 8px; left: 20px;
-      line-height: 1;
-    }
-
-    .voice-badge {
-      display: inline-block;
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      color: var(--green);
-      border: 1px solid var(--green-light);
-      padding: 3px 10px;
-      margin-bottom: 16px;
-      border-radius: 20px;
-    }
-
-    .voice-text { font-size: 0.84rem; color: var(--mid); line-height: 2.2; margin-bottom: 20px; padding-top: 16px; }
-    .voice-name { font-size: 0.78rem; color: var(--dark); }
-    .voice-age { font-size: 0.72rem; color: var(--mid); margin-left: 6px; }
-    .voice-stars { color: var(--gold); font-size: 0.8rem; margin-bottom: 8px; }
+    .voice-badge { display: inline-block; font-size: 0.63rem; letter-spacing: 0.12em; color: var(--green); border: 1px solid var(--green-light); padding: 3px 10px; margin-bottom: 14px; border-radius: 20px; }
+    .voice-stars { color: var(--green); font-size: 0.8rem; margin-bottom: 6px; }
+    .voice-text { font-size: 0.83rem; color: var(--mid); line-height: 2.2; margin-bottom: 18px; padding-top: 14px; }
+    .voice-name { font-size: 0.76rem; color: var(--dark); }
+    .voice-age  { font-size: 0.7rem; color: var(--mid); margin-left: 6px; }
 
     /* ─── NATURE ─── */
-    #nature {
-      position: relative; height: 480px;
-      overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-    }
-    #nature img {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center;
-      transform: scale(1.06);
-      transition: transform 8s ease;
-    }
+    #nature { position: relative; height: 460px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    #nature img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.06); transition: transform 8s ease; }
     #nature:hover img { transform: scale(1.0); }
-    .nature-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(45,45,45,0.3), rgba(45,45,45,0.15), rgba(45,45,45,0.4));
-    }
-    .nature-content {
-      position: relative; z-index: 1;
-      text-align: center; padding: 0 24px;
-    }
-    .nature-content .quote {
-      font-family: 'Noto Serif JP', serif;
-      font-size: clamp(1.3rem, 2.5vw, 2rem);
-      color: var(--white);
-      letter-spacing: 0.18em;
-      line-height: 1.9;
-      font-weight: 300;
-      text-shadow: 0 2px 16px rgba(0,0,0,0.3);
-      margin-bottom: 16px;
-    }
-    .nature-line { width: 48px; height: 1px; background: var(--gold); margin: 0 auto 16px; opacity: 0.8; }
-    .nature-content .sub { font-size: 0.8rem; color: rgba(255,255,255,0.8); letter-spacing: 0.22em; }
+    .nature-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(30,60,30,0.4), rgba(30,60,30,0.2), rgba(30,60,30,0.45)); }
+    .nature-content { position: relative; z-index: 1; text-align: center; padding: 0 24px; }
+    .nature-content .quote { font-family: 'Noto Serif JP', serif; font-size: clamp(1.2rem, 2.3vw, 1.9rem); color: var(--white); letter-spacing: 0.2em; line-height: 2; font-weight: 300; text-shadow: 0 2px 16px rgba(0,0,0,0.3); margin-bottom: 14px; }
+    .nature-line { width: 44px; height: 1px; background: var(--green-light); margin: 0 auto 14px; opacity: 0.9; }
+    .nature-content .sub { font-size: 0.78rem; color: rgba(255,255,255,0.8); letter-spacing: 0.22em; }
 
     /* ─── FLOW ─── */
     #flow { background: var(--white); padding: 100px 48px; }
 
-    .flow-header { text-align: center; margin-bottom: 64px; }
+    .flow-header { text-align: center; margin-bottom: 60px; }
     .flow-header .section-divider { margin: 0 auto 0; }
 
-    .flow-steps {
-      display: flex;
-      max-width: 1000px; margin: 0 auto;
-      position: relative;
-    }
-    .flow-steps::before {
-      content: '';
-      position: absolute;
-      top: 32px; left: 8%; right: 8%;
-      height: 1px; background: var(--green-light);
-    }
+    .flow-steps { display: flex; max-width: 1000px; margin: 0 auto; position: relative; }
+    .flow-steps::before { content: ''; position: absolute; top: 32px; left: 8%; right: 8%; height: 1px; background: var(--green-light); }
     .flow-step { flex: 1; text-align: center; padding: 0 10px; position: relative; z-index: 1; }
-    .flow-circle {
-      width: 64px; height: 64px; border-radius: 50%;
-      background: var(--white); border: 1px solid var(--green);
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 18px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem; color: var(--green);
-    }
-    .flow-step h4 { font-family: 'Noto Serif JP', serif; font-size: 0.84rem; font-weight: 400; letter-spacing: 0.1em; color: var(--dark); margin-bottom: 6px; }
-    .flow-step p { font-size: 0.75rem; color: var(--mid); line-height: 1.8; }
+    .flow-circle { width: 64px; height: 64px; border-radius: 50%; background: var(--white); border: 1px solid var(--green); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--green); }
+    .flow-step h4 { font-family: 'Noto Serif JP', serif; font-size: 0.83rem; font-weight: 400; letter-spacing: 0.1em; color: var(--dark); margin-bottom: 6px; }
+    .flow-step p { font-size: 0.74rem; color: var(--mid); line-height: 1.8; }
 
     /* ─── ACCESS ─── */
-    #access { background: var(--cream); padding: 100px 48px; }
+    #access { background: var(--green-pale); padding: 100px 48px; }
 
-    .access-header { text-align: center; margin-bottom: 64px; }
+    .access-header { text-align: center; margin-bottom: 60px; }
     .access-header .section-divider { margin: 0 auto 0; }
 
-    .access-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 48px; max-width: 1000px; margin: 0 auto;
-      align-items: start;
-    }
+    .access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; max-width: 1000px; margin: 0 auto; align-items: start; }
 
-    .access-name {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 1.3rem; font-weight: 300;
-      letter-spacing: 0.15em; color: var(--dark); margin-bottom: 28px;
-    }
+    .access-name { font-family: 'Noto Serif JP', serif; font-size: 1.25rem; font-weight: 300; letter-spacing: 0.15em; color: var(--dark); margin-bottom: 24px; }
 
-    .info-row {
-      display: flex; gap: 16px;
-      padding: 14px 0; border-bottom: 1px solid var(--border);
-      font-size: 0.84rem;
-    }
-    .info-row .key { color: var(--green); font-size: 0.72rem; letter-spacing: 0.12em; min-width: 72px; padding-top: 2px; }
+    .info-row { display: flex; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--border); font-size: 0.83rem; }
+    .info-row .key { color: var(--green); font-size: 0.7rem; letter-spacing: 0.12em; min-width: 70px; padding-top: 2px; }
     .info-row .val { color: var(--mid); line-height: 1.9; }
 
-    .map-box {
-      background: linear-gradient(135deg, #e8f0e8 0%, #d4e4d4 100%);
-      height: 300px; display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      border-radius: 2px; color: var(--mid);
-      font-size: 0.8rem; letter-spacing: 0.12em;
-      gap: 8px;
-    }
+    .map-box { background: linear-gradient(135deg, #d4e8d4 0%, #c0d8c0 100%); height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 2px; color: var(--mid); font-size: 0.78rem; letter-spacing: 0.12em; gap: 8px; }
     .map-box span { font-size: 2rem; }
 
     /* ─── RESERVE ─── */
-    #reserve { background: var(--dark); padding: 100px 48px; text-align: center; }
+    #reserve { background: var(--green-deep); padding: 100px 48px; text-align: center; }
 
-    .reserve-label { font-family: 'Cormorant Garamond', serif; font-size: 0.78rem; letter-spacing: 0.38em; color: var(--green-light); text-transform: uppercase; display: block; margin-bottom: 20px; }
-    .reserve-title { font-family: 'Noto Serif JP', serif; font-size: clamp(1.3rem, 2.2vw, 1.8rem); font-weight: 300; letter-spacing: 0.15em; color: var(--white); margin-bottom: 16px; }
-    .reserve-divider { width: 40px; height: 1px; background: var(--green); margin: 0 auto 24px; }
-    .reserve-lead { font-size: 0.88rem; color: rgba(255,255,255,0.58); line-height: 2.2; margin-bottom: 48px; }
+    .reserve-label { font-family: 'Cormorant Garamond', serif; font-size: 0.76rem; letter-spacing: 0.38em; color: var(--green-light); text-transform: uppercase; display: block; margin-bottom: 18px; }
+    .reserve-title { font-family: 'Noto Serif JP', serif; font-size: clamp(1.2rem, 2vw, 1.7rem); font-weight: 300; letter-spacing: 0.15em; color: var(--white); margin-bottom: 14px; }
+    .reserve-divider { width: 36px; height: 1px; background: var(--green-light); margin: 0 auto 22px; }
+    .reserve-lead { font-size: 0.87rem; color: rgba(255,255,255,0.65); line-height: 2.2; margin-bottom: 44px; }
 
-    .reserve-btn {
-      display: inline-block; padding: 18px 56px;
-      background: var(--green); color: var(--white);
-      text-decoration: none; font-size: 0.85rem;
-      letter-spacing: 0.22em; border-radius: 2px;
-      transition: background 0.3s;
-    }
-    .reserve-btn:hover { background: #668c6b; }
+    .reserve-btn { display: inline-block; padding: 17px 52px; background: var(--white); color: var(--green-deep); text-decoration: none; font-size: 0.83rem; letter-spacing: 0.22em; border-radius: 2px; transition: all 0.3s; font-family: 'Noto Serif JP', serif; }
+    .reserve-btn:hover { background: var(--green-light); }
 
-    .reserve-tel {
-      display: block; font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem; color: var(--white);
-      letter-spacing: 0.1em; margin-top: 28px;
-      text-decoration: none;
-    }
-    .reserve-hours { font-size: 0.75rem; color: rgba(255,255,255,0.42); margin-top: 8px; letter-spacing: 0.12em; }
+    .reserve-tel { display: block; font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--white); letter-spacing: 0.1em; margin-top: 28px; text-decoration: none; }
+    .reserve-hours { font-size: 0.73rem; color: rgba(255,255,255,0.48); margin-top: 8px; letter-spacing: 0.12em; }
 
-    .sns-links { display: flex; justify-content: center; gap: 20px; margin-top: 36px; }
-    .sns-link {
-      display: inline-block; padding: 10px 24px;
-      border: 1px solid rgba(255,255,255,0.2);
-      color: rgba(255,255,255,0.7);
-      text-decoration: none; font-size: 0.75rem;
-      letter-spacing: 0.18em; border-radius: 2px;
-      transition: all 0.3s;
-    }
-    .sns-link:hover { border-color: var(--green-light); color: var(--white); }
+    .sns-links { display: flex; justify-content: center; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+    .sns-link { display: inline-block; padding: 10px 24px; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.78); text-decoration: none; font-size: 0.73rem; letter-spacing: 0.18em; border-radius: 2px; transition: all 0.3s; }
+    .sns-link:hover { border-color: var(--green-light); color: var(--white); background: rgba(255,255,255,0.08); }
 
     /* ─── FOOTER ─── */
-    footer { background: #1e1e1e; padding: 40px 48px; text-align: center; }
-    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; letter-spacing: 0.22em; color: var(--white); margin-bottom: 6px; }
-    .footer-logo small { display: block; font-size: 0.6rem; color: rgba(255,255,255,0.4); letter-spacing: 0.2em; font-family: 'Noto Sans JP', sans-serif; margin-top: 3px; }
-    .footer-links { display: flex; justify-content: center; gap: 28px; margin: 20px 0; flex-wrap: wrap; }
-    .footer-links a { font-size: 0.72rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.3s; }
+    footer { background: var(--dark); padding: 40px 48px; text-align: center; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; letter-spacing: 0.25em; color: var(--white); margin-bottom: 6px; }
+    .footer-logo small { display: block; font-size: 0.56rem; color: rgba(255,255,255,0.38); letter-spacing: 0.2em; font-family: 'Noto Sans JP', sans-serif; margin-top: 3px; }
+    .footer-links { display: flex; justify-content: center; gap: 28px; margin: 18px 0; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.7rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.3s; }
     .footer-links a:hover { color: var(--green-light); }
-    .copyright { font-size: 0.68rem; color: rgba(255,255,255,0.25); letter-spacing: 0.1em; }
-
-    /* ─── REABEAUTE BADGE ─── */
-    .rea-badge {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 10px 20px;
-      border: 1px solid var(--gold-light);
-      background: rgba(201,169,110,0.06);
-      margin-top: 28px;
-    }
-    .rea-badge .icon { font-size: 1rem; }
-    .rea-badge .text { font-size: 0.72rem; letter-spacing: 0.15em; color: var(--gold); }
+    .copyright { font-size: 0.66rem; color: rgba(255,255,255,0.22); letter-spacing: 0.1em; }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       header { padding: 14px 20px; }
       nav { display: none; }
-
       #hero { grid-template-columns: 1fr; }
       .hero-right { min-height: 280px; }
       .hero-left { padding: 44px 24px; }
-
       .concept-inner { grid-template-columns: 1fr; }
-      .concept-img { min-height: 260px; }
-      .concept-text { padding: 40px 28px; }
-
-      .nurture-steps { grid-template-columns: 1fr; }
-      .menu-grid { grid-template-columns: 1fr; }
-
+      .concept-img { min-height: 240px; }
+      .concept-text { padding: 40px 26px; }
+      .nurture-steps, .menu-grid, .voice-grid { grid-template-columns: 1fr; }
       .staff-inner { grid-template-columns: 1fr; }
-      .staff-img { height: 320px; }
+      .staff-img { height: 300px; }
       .staff-body { padding: 36px 24px; }
-
-      .voice-grid { grid-template-columns: 1fr; }
       .access-grid { grid-template-columns: 1fr; }
-
       .flow-steps { flex-direction: column; gap: 20px; }
       .flow-steps::before { display: none; }
-
-      #trouble, #award-band, #concept, #skin-nurture, #menu,
-      #staff, #voice, #flow, #access, #reserve { padding: 64px 24px; }
+      #trouble, #knowledge, #award-band, #concept, #skin-nurture,
+      #menu, #staff, #voice, #flow, #access, #reserve { padding: 60px 22px; }
+      .band-sep { display: none; }
+      .knowledge-box { padding: 32px 24px; }
     }
   </style>
 </head>
@@ -719,14 +427,15 @@
 <!-- ═══ HEADER ═══ -->
 <header>
   <a href="#" class="logo">
-    epiloma
-    <span class="sub">kagoshima | 肌を育てるサロン</span>
+    EPILOMA
+    <span class="sub">鹿児島市宇宿 ｜ ニキビ・肌質改善 肌育専門サロン</span>
   </a>
   <nav>
     <a href="#concept">Concept</a>
     <a href="#menu">Menu</a>
     <a href="#staff">Staff</a>
-    <a href="#voice">Voice</a>
+    <a href="#products">Products</a>
+    <a href="#blog">Blog</a>
     <a href="#access">Access</a>
   </nav>
   <a href="#reserve" class="nav-reserve">ご予約</a>
@@ -735,16 +444,16 @@
 <!-- ═══ HERO ═══ -->
 <section id="hero">
   <div class="hero-left">
-    <span class="hero-tag">ニキビ・肌質改善　肌トラブル専門サロン</span>
+    <span class="hero-tag">ニキビ・肌質改善　肌育　専門サロン｜鹿児島市宇宿</span>
     <h1 class="hero-title">
-      皮ふ科で治らなかった<br>
-      <em>ニキビ・ニキビ跡</em>を、<br>
-      根本から変える。
+      皮ふ科では治らなかった<br>
+      <em>ニキビ・ニキビ跡</em>が、<br>
+      変わっていく。
     </h1>
     <p class="hero-desc">
-      諦めていた肌のお悩みに、向き合います。<br>
-      リアボーテ認定の最高品質コスメと<br>
-      全国No.1の技術で、あなたの肌を育てます。
+      「もう治らないかも」と諦めていませんか？<br>
+      EPILOMAは、肌の根本から向き合う<br>
+      ニキビ・肌質改善・肌育の専門サロンです。
     </p>
     <div class="hero-cta">
       <a href="#reserve" class="btn-primary">無料カウンセリング予約</a>
@@ -752,13 +461,13 @@
     </div>
     <div class="rea-badge">
       <span class="icon">🌿</span>
-      <span class="text">リアボーテ 正規施術店　／　美人コンテスト2025 全国総合優勝</span>
+      <span class="text">リアボーテ 正規施術店　／　美人コンテスト 2025 全国総合優勝</span>
     </div>
   </div>
   <div class="hero-right">
     <img
       src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=900&q=85"
-      alt="epiloma kagoshima エステイメージ"
+      alt="EPILOMA エステイメージ"
     />
     <div class="hero-award">
       <span class="yr">2025</span>
@@ -770,24 +479,39 @@
 
 <!-- ═══ TROUBLE ═══ -->
 <section id="trouble">
-  <p class="trouble-lead">
-    こんな<span>お肌のお悩み</span>、ありませんか？
-  </p>
+  <p class="trouble-lead">こんな<span>肌のお悩み</span>、ありませんか？</p>
   <div class="trouble-list">
     <span class="trouble-item">繰り返すニキビ</span>
-    <span class="trouble-item">ニキビ跡・赤み</span>
+    <span class="trouble-item">ニキビ跡・赤み・色素沈着</span>
     <span class="trouble-item">毛穴の開き・黒ずみ</span>
     <span class="trouble-item">肌のくすみ・色ムラ</span>
     <span class="trouble-item">乾燥・インナードライ</span>
     <span class="trouble-item">たるみ・ほうれい線</span>
     <span class="trouble-item">皮ふ科に通っても改善しない</span>
     <span class="trouble-item">敏感肌・肌荒れ</span>
+    <span class="trouble-item">クレーター・凸凹肌</span>
     <span class="trouble-item">化粧ノリが悪い</span>
   </div>
   <p class="trouble-catch">
-    一つでも当てはまるなら、epilomaにお任せください。
-    <strong>諦めていた肌が、変わります。</strong>
+    一つでも当てはまるなら、EPILOMAにご相談ください。
+    <strong>諦めていた肌が、きっと変わります。</strong>
   </p>
+</section>
+
+<!-- ═══ KNOWLEDGE ═══ -->
+<section id="knowledge">
+  <div class="knowledge-box">
+    <span class="knowledge-tag">EPILOMA からのメッセージ</span>
+    <h2 class="knowledge-title">
+      「ニキビは自分で潰した方が早く治る」<br>
+      <em>それは、間違いです。</em>
+    </h2>
+    <p class="knowledge-body">
+      手の雑菌が毛穴に入り込み、炎症が悪化。さらに無理に潰すことで<strong>クレーター状のダメージ</strong>が残ってしまいます。<br><br>
+      大切なのは、適切な時期に正しいケアと知識で<strong>「ニキビができない肌環境」を育てること。</strong><br><br>
+      EPILOMAでは、正しい知識と高品質なリアボーテコスメ・ハーブトリートメントで、肌の根本から変えるサポートをしています。一人で悩まず、まずはご相談ください。
+    </p>
+  </div>
 </section>
 
 <!-- ═══ AWARD BAND ═══ -->
@@ -806,8 +530,8 @@
   <div class="band-sep"></div>
   <div class="band-item">
     <span class="en">Specialist</span>
-    <div class="main">肌トラブル専門サロン</div>
-    <div class="sub">ニキビ・肌質改善・肌育</div>
+    <div class="main">ニキビ・肌質改善 肌育専門</div>
+    <div class="sub">鹿児島市宇宿</div>
   </div>
 </div>
 
@@ -825,17 +549,16 @@
       <h2 class="section-title">肌を育てる、<br>という考え方</h2>
       <div class="section-divider"></div>
       <p>
-        ニキビや肌荒れは、肌の「SOS」サインです。
-        一時的に症状を抑えるのではなく、<strong>なぜそうなるのか</strong>という根本原因にアプローチします。
+        ニキビや肌荒れは、肌からの「SOS」サインです。
+        症状を一時的に抑えるのではなく、<strong>なぜそうなるのかという根本原因</strong>にアプローチすることがEPILOMAの考え方です。
       </p>
       <p>
-        epilomaでは、お一人おひとりの肌状態を丁寧に分析し、
-        その方だけのオーダーメイドケアをご提供。
-        リアボーテの上質なコスメと全国No.1の技術で、
-        <strong>肌本来の力を引き出し、育てていきます。</strong>
+        お一人おひとりの肌状態を丁寧に分析し、
+        リアボーテの上質なコスメ・ハーブトリートメント（ヒト幹細胞配合）・リンパドレナージュを組み合わせた、
+        <strong>あなただけのオーダーメイドケア</strong>をご提供します。
       </p>
       <p>
-        皮ふ科でも改善しなかった方、長年お悩みの方こそ、
+        皮ふ科でも改善しなかった方、長年諦めていた方こそ、
         ぜひ一度ご相談ください。
       </p>
     </div>
@@ -845,29 +568,29 @@
 <!-- ═══ SKIN NURTURE ═══ -->
 <section id="skin-nurture">
   <div class="nurture-header">
-    <span class="section-label">epiloma Method</span>
-    <h2 class="section-title">肌育３ステップ</h2>
-    <div class="section-divider"></div>
-    <p class="nurture-lead">表面だけでなく、肌の奥から健やかに。<br>epiloma独自の肌育メソッドで、持続する美肌へ。</p>
+    <span class="section-label" style="display:block; text-align:center;">EPILOMA Method</span>
+    <h2 class="section-title" style="text-align:center;">肌育３ステップ</h2>
+    <div class="section-divider" style="margin:0 auto 20px;"></div>
+    <p class="nurture-lead">表面だけでなく、肌の奥から健やかに。<br>EPILOMAの肌育メソッドで、持続する美肌へ。</p>
   </div>
   <div class="nurture-steps">
     <div class="nurture-step">
       <span class="step-num">01</span>
       <span class="step-icon">🔍</span>
       <div class="step-title">肌分析・カウンセリング</div>
-      <p class="step-desc">肌状態を詳しく分析し、お悩みの原因を特定。あなただけのケアプランを設計します。</p>
+      <p class="step-desc">お悩みの根本原因を丁寧に分析。あなただけの肌育プランを設計します。</p>
     </div>
     <div class="nurture-step">
       <span class="step-num">02</span>
       <span class="step-icon">🌿</span>
       <div class="step-title">根本からのアプローチ</div>
-      <p class="step-desc">リアボーテの最高品質コスメで、肌のターンオーバーを整え、根本から改善します。</p>
+      <p class="step-desc">リアボーテ・ハーブトリートメント（ヒト幹細胞）・リンパドレナージュで肌環境を整えます。</p>
     </div>
     <div class="nurture-step">
       <span class="step-num">03</span>
-      <span class="step-icon">✨</span>
+      <span class="step-icon">🏡</span>
       <div class="step-title">自宅ケアのサポート</div>
-      <p class="step-desc">サロンケアだけで終わらせない。ご自宅でのスキンケア方法もしっかりお伝えします。</p>
+      <p class="step-desc">正しいホームケアの方法もお伝えします。サロンと自宅のケアで相乗効果を。</p>
     </div>
   </div>
 </section>
@@ -875,51 +598,51 @@
 <!-- ═══ MENU ═══ -->
 <section id="menu">
   <div class="menu-header">
-    <span class="section-label">Menu</span>
-    <h2 class="section-title">施術メニュー</h2>
-    <div class="section-divider"></div>
+    <span class="section-label" style="display:block; text-align:center;">Menu</span>
+    <h2 class="section-title" style="text-align:center;">施術メニュー</h2>
+    <div class="section-divider" style="margin:0 auto 0;"></div>
   </div>
   <div class="menu-grid">
     <div class="menu-card">
       <span class="menu-tag">人気 No.1</span>
       <div class="menu-name">ニキビ・ニキビ跡<br>集中改善コース</div>
       <span class="menu-category">Acne Treatment</span>
-      <p class="menu-desc">皮ふ科でも治らなかったニキビに特化した集中ケア。炎症・跡・毛穴を同時にアプローチします。</p>
+      <p class="menu-desc">皮ふ科でも改善しなかったニキビに特化。炎症・跡・毛穴を同時にアプローチする集中ケアです。</p>
       <div class="menu-price">¥16,500<small>（税込）〜</small></div>
+    </div>
+    <div class="menu-card">
+      <span class="menu-tag">新メニュー</span>
+      <div class="menu-name">ハーブトリートメント<br>（ヒト幹細胞配合）</div>
+      <span class="menu-category">Herb Treatment</span>
+      <p class="menu-desc">ヒト幹細胞エキス配合のハーブトリートメントで、肌の再生力を高める最先端ケア。</p>
+      <div class="menu-price">¥18,700<small>（税込）〜</small></div>
+    </div>
+    <div class="menu-card">
+      <span class="menu-tag">デトックス</span>
+      <div class="menu-name">リンパドレナージュ<br>フェイシャル</div>
+      <span class="menu-category">Lymph Drainage</span>
+      <p class="menu-desc">リンパの流れを整え、むくみ・くすみ・老廃物を排出。自然なリフトアップ効果も。</p>
+      <div class="menu-price">¥14,300<small>（税込）〜</small></div>
     </div>
     <div class="menu-card">
       <span class="menu-tag">肌質改善</span>
       <div class="menu-name">リアボーテ<br>肌質改善トリートメント</div>
       <span class="menu-category">Skin Improvement</span>
-      <p class="menu-desc">リアボーテ独自の処方で、くすみ・乾燥・毛穴を徹底ケア。透明感あふれる肌へ導きます。</p>
+      <p class="menu-desc">リアボーテ正規コスメで、くすみ・乾燥・毛穴を徹底ケア。透明感あふれる肌へ導きます。</p>
       <div class="menu-price">¥15,000<small>（税込）〜</small></div>
-    </div>
-    <div class="menu-card">
-      <span class="menu-tag">肌育</span>
-      <div class="menu-name">肌育フェイシャル<br>スタンダードコース</div>
-      <span class="menu-category">Skin Nurture</span>
-      <p class="menu-desc">肌本来の力を底上げする肌育ケア。継続することで、すっぴん美肌を目指します。</p>
-      <div class="menu-price">¥13,200<small>（税込）〜</small></div>
-    </div>
-    <div class="menu-card">
-      <span class="menu-tag">エイジングケア</span>
-      <div class="menu-name">リフトアップ<br>エイジングケアコース</div>
-      <span class="menu-category">Aging Care</span>
-      <p class="menu-desc">たるみ・シワ・ほうれい線に集中アプローチ。ハリと弾力のある若々しい肌へ。</p>
-      <div class="menu-price">¥18,700<small>（税込）〜</small></div>
     </div>
     <div class="menu-card">
       <span class="menu-tag">敏感肌</span>
       <div class="menu-name">敏感肌・乾燥肌<br>鎮静ケアコース</div>
       <span class="menu-category">Sensitive Care</span>
-      <p class="menu-desc">赤み・かゆみ・ヒリつきなど敏感肌のお悩みに。肌バリアを整え、揺らがない肌へ。</p>
+      <p class="menu-desc">赤み・ヒリつき・乾燥など敏感肌のお悩みに。肌バリアを整え、揺らがない肌へ。</p>
       <div class="menu-price">¥12,100<small>（税込）〜</small></div>
     </div>
     <div class="menu-card">
       <span class="menu-tag">初回限定</span>
       <div class="menu-name">初回体験<br>カウンセリング＋ケア</div>
       <span class="menu-category">Trial Course</span>
-      <p class="menu-desc">肌分析カウンセリング＋フルフェイシャルが初回特別価格で。まずはお気軽に！</p>
+      <p class="menu-desc">肌分析カウンセリング＋フルフェイシャルが初回特別価格。まずはお気軽にどうぞ！</p>
       <div class="menu-price">¥5,500<small>（税込・初回限定）</small></div>
     </div>
   </div>
@@ -935,31 +658,33 @@
   <div class="staff-inner">
     <div class="staff-img">
       <img
-        src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=85"
-        alt="beauty Miho with beautiful eyes"
+        src="miho.jpg"
+        alt="Miho エステティシャン"
       />
       <div class="staff-img-overlay">
-        <span class="name">beauty Miho</span>
-        <span class="tag">with beautiful eyes</span>
+        <span class="name">Miho</span>
+        <span class="tag">Chief Esthetician / EPILOMA</span>
       </div>
     </div>
     <div class="staff-body">
       <span class="section-label">Chief Esthetician</span>
-      <h3 class="section-title" style="font-size:1.4rem;">beauty Miho<br><small style="font-size:0.8rem; color:var(--mid); letter-spacing:0.15em;">with beautiful eyes</small></h3>
+      <h3 class="section-title" style="font-size:1.5rem; margin-bottom:8px;">Miho</h3>
       <div class="section-divider"></div>
       <p>
-        「諦めないでください」——肌のお悩みを抱えるお客様に、いつもそう伝えています。
-        皮ふ科に通っても改善せず、何年も悩み続けた方のお顔が変わっていく瞬間が、
-        この仕事の一番の喜びです。
+        「諦めないでください」——これが、お客様にいつも伝える言葉です。
+        皮ふ科に通い続けても変わらなかった肌が、正しいケアで少しずつ変わっていく。
+        その瞬間に立ち会えることが、この仕事の一番の喜びです。
       </p>
       <p>
-        お一人おひとりの肌と丁寧に向き合い、根本から変えるケアを追求し続けています。
+        ニキビができてしまうのは、肌環境が整っていないサインです。
+        表面だけを治すのではなく、<strong style="color:var(--green-deep); font-weight:400;">「なぜできるのか」という根本</strong>から向き合います。
         どんな些細なお悩みでも、まずはお気軽にご相談ください。
       </p>
       <ul class="staff-awards">
         <li>リアボーテ 美人コンテスト 2025 全国総合 第１位</li>
         <li>リアボーテ 正規認定エステティシャン（最上位資格）</li>
         <li>ニキビ・肌質改善スペシャリスト認定</li>
+        <li>ハーブトリートメント（ヒト幹細胞）・リンパドレナージュ認定</li>
       </ul>
     </div>
   </div>
@@ -976,19 +701,19 @@
     <div class="voice-card">
       <div class="voice-stars">★★★★★</div>
       <span class="voice-badge">ニキビ改善</span>
-      <p class="voice-text">10年以上悩んでいたニキビが、5回の施術でほぼなくなりました。皮ふ科では「体質だから」と言われ続けていたのに…。先生の分析力と技術に本当に感動しています。</p>
+      <p class="voice-text">10年以上悩んでいたニキビが、5回の施術でほぼなくなりました。皮ふ科では「体質だから」と言われ続けていたのに…。Mihoさんの分析力と技術に本当に感動しています。</p>
       <span class="voice-name">Y.K 様</span><span class="voice-age">20代</span>
     </div>
     <div class="voice-card">
       <div class="voice-stars">★★★★★</div>
       <span class="voice-badge">肌質改善</span>
-      <p class="voice-text">毛穴の開きとくすみがずっとコンプレックスでした。カウンセリングで原因をしっかり説明してもらえて、施術のたびに肌が変わっていくのが実感できました。ファンデが要らなくなりつつあります！</p>
+      <p class="voice-text">ヒト幹細胞のハーブトリートメントを体験しました。施術後の肌のもちもち感が全然違う！毎回丁寧にカウンセリングしてもらえるので、自分の肌への理解も深まりました。</p>
       <span class="voice-name">M.S 様</span><span class="voice-age">30代</span>
     </div>
     <div class="voice-card">
       <div class="voice-stars">★★★★★</div>
       <span class="voice-badge">ニキビ跡</span>
-      <p class="voice-text">ニキビ跡の赤みと色素沈着が気になって相談しました。諦めていたのに、こんなに変わるとは思っていなかった。リアボーテのコスメも肌に優しくて、敏感肌の私でも安心して受けられています。</p>
+      <p class="voice-text">クレーターになってしまったニキビ跡が気になって相談しました。諦めていたのに、こんなに変わるとは。リンパドレナージュで顔のむくみも取れて、すっきりしました！</p>
       <span class="voice-name">A.T 様</span><span class="voice-age">40代</span>
     </div>
   </div>
@@ -996,32 +721,97 @@
 
 <!-- ═══ NATURE ═══ -->
 <div id="nature">
-  <img
-    src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=1600&q=85"
-    alt="タイ ピピ島の風景"
-  />
+  <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=1600&q=85" alt="タイ ピピ島の風景" />
   <div class="nature-overlay"></div>
   <div class="nature-content">
-    <p class="quote">
-      肌が変わると、<br>生き方が変わる。
-    </p>
+    <p class="quote">肌が変わると、<br>生き方が変わる。</p>
     <div class="nature-line"></div>
-    <p class="sub">epiloma kagoshima — 肌を育てるサロン</p>
+    <p class="sub">EPILOMA — 肌を育てるサロン｜鹿児島市宇宿</p>
   </div>
 </div>
+
+<!-- ═══ PRODUCTS ═══ -->
+<section id="products" style="background:var(--white); padding:100px 48px; text-align:center;">
+  <span class="section-label" style="display:block;">Products</span>
+  <h2 class="section-title">リアボーテ 公式プロダクト</h2>
+  <div class="section-divider" style="margin:0 auto 24px;"></div>
+  <p style="font-size:0.88rem; color:var(--mid); line-height:2.2; max-width:520px; margin:0 auto 48px;">
+    EPILOMAで使用しているリアボーテの上質なスキンケアコスメ。<br>
+    天然由来成分・ノンパラベン処方で、肌に優しく確かな効果を。<br>
+    ご自宅でもサロンクオリティのケアをお届けします。
+  </p>
+  <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; max-width:900px; margin:0 auto 48px;">
+    <div style="background:var(--green-pale); border:1px solid var(--border); border-top:3px solid var(--green); padding:36px 32px; flex:1; min-width:200px; max-width:260px; text-align:center;">
+      <div style="font-size:2.4rem; margin-bottom:16px;">🌿</div>
+      <div style="font-family:'Noto Serif JP',serif; font-size:0.95rem; color:var(--dark); letter-spacing:0.1em; margin-bottom:10px;">スキンケアライン</div>
+      <div style="font-size:0.78rem; color:var(--mid); line-height:2;">洗顔・化粧水・美容液・<br>クリームなど</div>
+    </div>
+    <div style="background:var(--green-pale); border:1px solid var(--border); border-top:3px solid var(--green); padding:36px 32px; flex:1; min-width:200px; max-width:260px; text-align:center;">
+      <div style="font-size:2.4rem; margin-bottom:16px;">✨</div>
+      <div style="font-family:'Noto Serif JP',serif; font-size:0.95rem; color:var(--dark); letter-spacing:0.1em; margin-bottom:10px;">ハーブ・幹細胞シリーズ</div>
+      <div style="font-size:0.78rem; color:var(--mid); line-height:2;">ヒト幹細胞配合の<br>プレミアムライン</div>
+    </div>
+    <div style="background:var(--green-pale); border:1px solid var(--border); border-top:3px solid var(--green); padding:36px 32px; flex:1; min-width:200px; max-width:260px; text-align:center;">
+      <div style="font-size:2.4rem; margin-bottom:16px;">💎</div>
+      <div style="font-family:'Noto Serif JP',serif; font-size:0.95rem; color:var(--dark); letter-spacing:0.1em; margin-bottom:10px;">ボディケアライン</div>
+      <div style="font-size:0.78rem; color:var(--mid); line-height:2;">全身の肌を整える<br>ボディケアシリーズ</div>
+    </div>
+  </div>
+  <a href="https://relabeaute-japan.com/product/" target="_blank"
+     style="display:inline-block; padding:16px 52px; background:var(--green); color:var(--white); text-decoration:none; font-size:0.82rem; letter-spacing:0.22em; border-radius:2px; transition:background 0.3s;"
+     onmouseover="this.style.background='var(--green-mid)'" onmouseout="this.style.background='var(--green)'">
+    リアボーテ 公式プロダクトを見る →
+  </a>
+</section>
+
+<!-- ═══ BLOG ═══ -->
+<section id="blog" style="background:var(--green-pale); padding:100px 48px;">
+  <div style="text-align:center; margin-bottom:56px;">
+    <span class="section-label" style="display:block;">Blog</span>
+    <h2 class="section-title">Miho's ブログ</h2>
+    <div class="section-divider" style="margin:0 auto 20px;"></div>
+    <p style="font-size:0.88rem; color:var(--mid); line-height:2.2; max-width:500px; margin:0 auto;">
+      肌のこと、ケアのこと、日々のことを綴ります。<br>
+      正しい知識で、あなたの肌育てのヒントになれれば嬉しいです。
+    </p>
+  </div>
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:1100px; margin:0 auto 48px;">
+    <div style="background:var(--white); padding:32px 28px; border-top:3px solid var(--green);">
+      <div style="font-size:0.68rem; letter-spacing:0.2em; color:var(--green); margin-bottom:10px;">2025.04 — ニキビケア</div>
+      <div style="font-family:'Noto Serif JP',serif; font-size:0.95rem; color:var(--dark); letter-spacing:0.08em; margin-bottom:12px; line-height:1.7;">ニキビは絶対に<br>自分で潰さないで</div>
+      <p style="font-size:0.78rem; color:var(--mid); line-height:2;">正しいケアの知識と、なぜ悪化してしまうのかについて詳しく解説します。</p>
+    </div>
+    <div style="background:var(--white); padding:32px 28px; border-top:3px solid var(--green);">
+      <div style="font-size:0.68rem; letter-spacing:0.2em; color:var(--green); margin-bottom:10px;">2025.03 — 肌育</div>
+      <div style="font-family:'Noto Serif JP',serif; font-size:0.95rem; color:var(--dark); letter-spacing:0.08em; margin-bottom:12px; line-height:1.7;">「肌を育てる」って<br>どういうこと？</div>
+      <p style="font-size:0.78rem; color:var(--mid); line-height:2;">EPILOMAが大切にしている「肌育」という考え方についてお話しします。</p>
+    </div>
+    <div style="background:var(--white); padding:32px 28px; border-top:3px solid var(--green); display:flex; align-items:center; justify-content:center; flex-direction:column; text-align:center;">
+      <div style="font-size:2rem; margin-bottom:16px; color:var(--green-light);">✍️</div>
+      <div style="font-family:'Noto Serif JP',serif; font-size:0.9rem; color:var(--mid); letter-spacing:0.1em; line-height:2;">続々と更新予定！<br>Instagramも<br>チェックしてください</div>
+    </div>
+  </div>
+  <div style="text-align:center;">
+    <a href="https://www.instagram.com/p/C4ec3gfvaNF/" target="_blank"
+       style="display:inline-block; padding:14px 44px; border:1px solid var(--green); color:var(--green); text-decoration:none; font-size:0.8rem; letter-spacing:0.2em; border-radius:2px; transition:all 0.3s;"
+       onmouseover="this.style.background='var(--green)'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='var(--green)';">
+      📷 Instagram でも発信中
+    </a>
+  </div>
+</section>
 
 <!-- ═══ FLOW ═══ -->
 <section id="flow">
   <div class="flow-header">
     <span class="section-label" style="display:block; text-align:center;">Flow</span>
     <h2 class="section-title" style="text-align:center;">ご来店の流れ</h2>
-    <div class="section-divider" style="margin:0 auto 64px;"></div>
+    <div class="section-divider" style="margin:0 auto 60px;"></div>
   </div>
   <div class="flow-steps">
     <div class="flow-step">
       <div class="flow-circle">01</div>
       <h4>ご予約</h4>
-      <p>電話・LINE・<br>WEBからどうぞ</p>
+      <p>LINE・ホットペッパー<br>またはお電話で</p>
     </div>
     <div class="flow-step">
       <div class="flow-circle">02</div>
@@ -1041,7 +831,7 @@
     <div class="flow-step">
       <div class="flow-circle">05</div>
       <h4>アフターケア</h4>
-      <p>自宅ケアの<br>アドバイスも</p>
+      <p>ホームケアの<br>アドバイスも充実</p>
     </div>
   </div>
 </section>
@@ -1051,11 +841,11 @@
   <div class="access-header">
     <span class="section-label" style="display:block; text-align:center;">Access</span>
     <h2 class="section-title" style="text-align:center;">店舗情報・アクセス</h2>
-    <div class="section-divider" style="margin:0 auto 64px;"></div>
+    <div class="section-divider" style="margin:0 auto 60px;"></div>
   </div>
   <div class="access-grid">
     <div>
-      <div class="access-name">epiloma kagoshima</div>
+      <div class="access-name">EPILOMA（エピロマ）</div>
       <div class="info-row">
         <span class="key">住所</span>
         <span class="val">鹿児島市宇宿１丁目</span>
@@ -1073,20 +863,19 @@
         <span class="val">毎週月曜日・不定休</span>
       </div>
       <div class="info-row">
-        <span class="key">駐車場</span>
-        <span class="val">あり（○台）</span>
+        <span class="key">予約</span>
+        <span class="val">
+          <a href="https://lin.ee/ZYcJxLJ" target="_blank" style="color:var(--green); text-decoration:none; display:block;">💬 公式LINE →</a>
+          <a href="https://beauty.hotpepper.jp/kr/slnH000667751/" target="_blank" style="color:var(--green); text-decoration:none; display:block; margin-top:4px;">🔖 ホットペッパービューティー →</a>
+        </span>
       </div>
       <div class="info-row">
         <span class="key">Instagram</span>
-        <span class="val">
-          <a href="https://www.instagram.com/p/C4ec3gfvaNF/" target="_blank" style="color:var(--green); text-decoration:none;">@epiloma_kagoshima</a>
-        </span>
+        <span class="val"><a href="https://www.instagram.com/p/C4ec3gfvaNF/" target="_blank" style="color:var(--green); text-decoration:none;">@epiloma_kagoshima →</a></span>
       </div>
       <div class="info-row">
         <span class="key">Products</span>
-        <span class="val">
-          <a href="https://relabeaute-japan.com/product/" target="_blank" style="color:var(--green); text-decoration:none;">リアボーテ 公式プロダクト →</a>
-        </span>
+        <span class="val"><a href="https://relabeaute-japan.com/product/" target="_blank" style="color:var(--green); text-decoration:none;">リアボーテ 公式プロダクト →</a></span>
       </div>
     </div>
     <div class="map-box">
@@ -1103,22 +892,32 @@
   <div class="reserve-divider"></div>
   <p class="reserve-lead">
     無料カウンセリングは随時受付中。<br>
-    お肌のお悩み、どんな些細なことでもお気軽にご相談ください。
+    肌のお悩み、どんな些細なことでもお気軽にご相談ください。<br>
+    LINE・ホットペッパー・お電話でご予約いただけます。
   </p>
-  <a href="tel:000-000-0000" class="reserve-btn">Web予約はこちら</a>
+  <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:16px;">
+    <a href="https://lin.ee/ZYcJxLJ" target="_blank" class="reserve-btn" style="background:var(--white); color:var(--green-deep);">
+      💬 LINE で予約する
+    </a>
+    <a href="https://beauty.hotpepper.jp/kr/slnH000667751/" target="_blank" class="reserve-btn" style="background:rgba(255,255,255,0.15); color:var(--white); border:1px solid rgba(255,255,255,0.4);">
+      🔖 ホットペッパーで予約
+    </a>
+  </div>
   <a href="tel:000-000-0000" class="reserve-tel">000-000-0000</a>
   <p class="reserve-hours">受付時間 10:00 〜 18:00（月曜定休）</p>
   <div class="sns-links">
-    <a href="https://www.instagram.com/p/C4ec3gfvaNF/" target="_blank" class="sns-link">Instagram</a>
-    <a href="https://relabeaute-japan.com/product/" target="_blank" class="sns-link">Ria Beauté Products</a>
+    <a href="https://www.instagram.com/p/C4ec3gfvaNF/" target="_blank" class="sns-link">📷 Instagram</a>
+    <a href="https://lin.ee/ZYcJxLJ" target="_blank" class="sns-link">💬 公式LINE</a>
+    <a href="https://beauty.hotpepper.jp/kr/slnH000667751/" target="_blank" class="sns-link">🔖 ホットペッパー</a>
+    <a href="https://relabeaute-japan.com/product/" target="_blank" class="sns-link">🌿 Products</a>
   </div>
 </section>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="footer-logo">
-    epiloma
-    <small>kagoshima | 肌を育てるサロン</small>
+    EPILOMA
+    <small>鹿児島市宇宿 ｜ ニキビ・肌質改善 肌育専門サロン</small>
   </div>
   <div class="footer-links">
     <a href="#concept">Concept</a>
@@ -1128,7 +927,7 @@
     <a href="#access">Access</a>
     <a href="#reserve">Reservation</a>
   </div>
-  <p class="copyright">© 2025 epiloma kagoshima. All Rights Reserved.</p>
+  <p class="copyright">© 2025 EPILOMA kagoshima. All Rights Reserved.</p>
 </footer>
 
 </body>
