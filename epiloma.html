@@ -10,414 +10,369 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green:       #6a9b6e;
-      --green-mid:   #5a8a5e;
-      --green-light: #b8d8bc;
-      --green-pale:  #eaf3eb;
-      --green-deep:  #3d6b42;
-      --gold:        #c9a96e;
-      --gold-light:  #e8d5b0;
-      --cream:       #f8faf8;
-      --dark:        #2a2e2a;
-      --mid:         #5a6b5a;
-      --white:       #ffffff;
-      --border:      #d8e8d8;
+      --black:      #080808;
+      --dark1:      #111111;
+      --dark2:      #1a1a1a;
+      --dark3:      #242424;
+      --dark4:      #2e2e2e;
+      --gold:       #c9a96e;
+      --gold-light: #e8d5b0;
+      --gold-pale:  rgba(201,169,110,0.08);
+      --gold-border:rgba(201,169,110,0.2);
+      --white:      #f5f0ea;
+      --mid:        #8a8278;
+      --soft:       #b8b0a4;
+      --green:      #5a8a5e;
+      --green-light:#8ab88e;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Noto Sans JP', sans-serif;
-      background: var(--white);
-      color: var(--dark);
+      background: var(--black);
+      color: var(--white);
       font-weight: 300;
       line-height: 1.8;
     }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--dark1); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
 
     /* ─── HEADER ─── */
     header {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 16px 48px;
-      background: rgba(255,255,255,0.96);
+      padding: 18px 52px;
+      background: rgba(8,8,8,0.95);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--gold-border);
     }
 
     .logo {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem; letter-spacing: 0.25em;
-      color: var(--green-deep); text-decoration: none;
+      font-size: 1.6rem; letter-spacing: 0.28em;
+      color: var(--white); text-decoration: none;
       display: flex; flex-direction: column; line-height: 1.2;
     }
-    .logo .sub { font-size: 0.52rem; letter-spacing: 0.22em; color: var(--mid); font-family: 'Noto Sans JP', sans-serif; margin-top: 3px; }
+    .logo .sub { font-size: 0.5rem; letter-spacing: 0.22em; color: var(--mid); font-family: 'Noto Sans JP', sans-serif; margin-top: 4px; }
 
-    nav { display: flex; gap: 30px; }
-    nav a { font-size: 0.74rem; letter-spacing: 0.18em; color: var(--mid); text-decoration: none; transition: color 0.3s; }
-    nav a:hover { color: var(--green); }
+    nav { display: flex; gap: 28px; }
+    nav a { font-size: 0.72rem; letter-spacing: 0.18em; color: var(--soft); text-decoration: none; transition: color 0.3s; text-transform: uppercase; }
+    nav a:hover { color: var(--gold); }
 
     .nav-reserve {
-      font-size: 0.74rem; letter-spacing: 0.15em; padding: 10px 22px;
-      background: var(--green); color: var(--white);
-      text-decoration: none; border-radius: 2px; transition: background 0.3s;
+      font-size: 0.72rem; letter-spacing: 0.18em; padding: 10px 22px;
+      border: 1px solid var(--gold); color: var(--gold);
+      text-decoration: none; border-radius: 1px; transition: all 0.3s;
     }
-    .nav-reserve:hover { background: var(--green-mid); }
+    .nav-reserve:hover { background: var(--gold); color: var(--black); }
 
     /* ─── HERO ─── */
     #hero {
       min-height: 100vh; display: grid;
-      grid-template-columns: 1fr 1fr; padding-top: 70px;
+      grid-template-columns: 1fr 1fr; padding-top: 72px;
     }
 
     .hero-left {
-      background: var(--cream);
+      background: var(--dark1);
       display: flex; flex-direction: column; justify-content: center;
-      padding: 72px 60px;
+      padding: 80px 64px;
+      border-right: 1px solid var(--gold-border);
     }
 
     .hero-tag {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-size: 0.7rem; letter-spacing: 0.2em; color: var(--green);
-      margin-bottom: 28px;
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 0.68rem; letter-spacing: 0.25em; color: var(--gold);
+      margin-bottom: 32px; text-transform: uppercase;
     }
-    .hero-tag::before { content: ''; display: block; width: 28px; height: 1px; background: var(--green); }
+    .hero-tag::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
 
     .hero-title {
       font-family: 'Noto Serif JP', serif;
-      font-size: clamp(1.7rem, 3vw, 2.7rem);
+      font-size: clamp(1.7rem, 3vw, 2.8rem);
       font-weight: 300; line-height: 1.75;
-      letter-spacing: 0.08em; color: var(--dark); margin-bottom: 24px;
+      letter-spacing: 0.08em; color: var(--white); margin-bottom: 28px;
     }
-    .hero-title em { font-style: normal; color: var(--green-deep); border-bottom: 2px solid var(--green-light); }
+    .hero-title em { font-style: normal; color: var(--gold); }
 
-    .hero-desc { font-size: 0.87rem; color: var(--mid); line-height: 2.2; margin-bottom: 36px; max-width: 400px; }
+    .hero-desc { font-size: 0.86rem; color: var(--soft); line-height: 2.3; margin-bottom: 44px; max-width: 400px; }
 
     .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
 
-    .btn-primary {
-      display: inline-block; padding: 14px 34px;
-      background: var(--green); color: var(--white);
-      text-decoration: none; font-size: 0.8rem;
-      letter-spacing: 0.18em; border-radius: 2px; transition: background 0.3s;
+    .btn-gold {
+      display: inline-block; padding: 15px 36px;
+      background: var(--gold); color: var(--black);
+      text-decoration: none; font-size: 0.78rem;
+      letter-spacing: 0.2em; transition: opacity 0.3s;
     }
-    .btn-primary:hover { background: var(--green-mid); }
+    .btn-gold:hover { opacity: 0.85; }
 
     .btn-outline {
-      display: inline-block; padding: 14px 34px;
-      border: 1px solid var(--green); color: var(--green);
-      text-decoration: none; font-size: 0.8rem;
-      letter-spacing: 0.18em; border-radius: 2px; transition: all 0.3s;
+      display: inline-block; padding: 15px 36px;
+      border: 1px solid var(--gold-border); color: var(--soft);
+      text-decoration: none; font-size: 0.78rem;
+      letter-spacing: 0.2em; transition: all 0.3s;
     }
-    .btn-outline:hover { background: var(--green); color: var(--white); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
 
-    .hero-right { position: relative; overflow: hidden; background: #1a1a1a; }
-    .hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: brightness(0.88) saturate(1.1); }
+    .hero-right { position: relative; overflow: hidden; background: var(--dark2); }
+    .hero-right img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: brightness(0.75) saturate(0.9); }
 
     .hero-award {
-      position: absolute; bottom: 36px; right: 36px;
-      background: var(--green-deep); border-radius: 50%;
-      width: 118px; height: 118px;
+      position: absolute; bottom: 40px; right: 40px;
+      background: var(--gold); border-radius: 50%;
+      width: 120px; height: 120px;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       text-align: center; padding: 10px;
-      box-shadow: 0 8px 32px rgba(61,107,66,0.45);
-      border: 2px solid rgba(255,255,255,0.2);
+      box-shadow: 0 8px 40px rgba(201,169,110,0.35);
     }
-    .hero-award .yr  { font-size: 0.56rem; color: rgba(255,255,255,0.88); letter-spacing: 0.1em; }
-    .hero-award .no  { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: white; line-height: 1; }
-    .hero-award .lbl { font-size: 0.52rem; color: rgba(255,255,255,0.88); line-height: 1.75; margin-top: 2px; letter-spacing: 0.05em; }
+    .hero-award .yr  { font-size: 0.54rem; color: rgba(8,8,8,0.8); letter-spacing: 0.1em; }
+    .hero-award .no  { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; color: var(--black); line-height: 1; }
+    .hero-award .lbl { font-size: 0.5rem; color: rgba(8,8,8,0.8); line-height: 1.75; margin-top: 2px; letter-spacing: 0.05em; }
 
     .rea-badge {
       display: inline-flex; align-items: center; gap: 10px;
-      padding: 10px 18px; margin-top: 28px;
-      border: 1px solid var(--green-light);
-      background: var(--green-pale);
+      padding: 10px 18px; margin-top: 32px;
+      border: 1px solid var(--gold-border);
+      background: var(--gold-pale);
     }
-    .rea-badge .icon { font-size: 1rem; }
-    .rea-badge .text { font-size: 0.7rem; letter-spacing: 0.12em; color: var(--green-deep); }
+    .rea-badge .text { font-size: 0.68rem; letter-spacing: 0.12em; color: var(--gold); }
+
+    /* ─── SECTION COMMON ─── */
+    .sec-label {
+      font-family: 'Cormorant Garamond', serif; font-size: 0.72rem;
+      letter-spacing: 0.42em; color: var(--gold); text-transform: uppercase;
+      display: block; margin-bottom: 18px;
+    }
+    .sec-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.25rem, 2.1vw, 1.9rem);
+      font-weight: 300; letter-spacing: 0.12em;
+      color: var(--white); line-height: 1.75; margin-bottom: 22px;
+    }
+    .sec-div { width: 40px; height: 1px; background: var(--gold); margin-bottom: 24px; }
+    .sec-div-center { width: 40px; height: 1px; background: var(--gold); margin: 0 auto 24px; }
 
     /* ─── TROUBLE ─── */
-    #trouble { background: var(--white); padding: 96px 48px; text-align: center; }
+    #trouble { background: var(--dark1); padding: 96px 52px; text-align: center; }
 
     .trouble-lead {
       font-family: 'Noto Serif JP', serif;
-      font-size: clamp(1.05rem, 1.9vw, 1.45rem);
+      font-size: clamp(1.05rem, 1.9vw, 1.4rem);
       font-weight: 300; letter-spacing: 0.12em;
-      color: var(--dark); margin-bottom: 44px; line-height: 2;
+      color: var(--white); margin-bottom: 44px; line-height: 2;
     }
-    .trouble-lead span { color: var(--green-deep); border-bottom: 1px solid var(--green-light); }
+    .trouble-lead span { color: var(--gold); border-bottom: 1px solid var(--gold-border); }
 
-    .trouble-list {
-      display: flex; flex-wrap: wrap; justify-content: center;
-      gap: 10px; max-width: 780px; margin: 0 auto 44px;
-    }
+    .trouble-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 780px; margin: 0 auto 44px; }
+    .trouble-item { background: var(--dark3); border: 1px solid var(--gold-border); padding: 10px 22px; font-size: 0.82rem; color: var(--soft); letter-spacing: 0.1em; border-radius: 40px; }
+    .trouble-item::before { content: "✓ "; color: var(--gold); font-weight: bold; }
 
-    .trouble-item {
-      background: var(--green-pale); border: 1px solid var(--green-light);
-      padding: 10px 22px; font-size: 0.83rem; color: var(--dark);
-      letter-spacing: 0.1em; border-radius: 40px;
-    }
-    .trouble-item::before { content: "✓ "; color: var(--green); font-weight: bold; }
-
-    .trouble-catch {
-      font-family: 'Noto Serif JP', serif;
-      font-size: clamp(0.95rem, 1.7vw, 1.25rem);
-      color: var(--mid); letter-spacing: 0.15em; font-weight: 300; line-height: 2.2;
-    }
-    .trouble-catch strong {
-      color: var(--green-deep); font-weight: 400; display: block;
-      font-size: clamp(1.1rem, 2vw, 1.6rem); margin-top: 8px;
-    }
+    .trouble-catch { font-family: 'Noto Serif JP', serif; font-size: clamp(0.95rem, 1.7vw, 1.22rem); color: var(--soft); letter-spacing: 0.15em; font-weight: 300; line-height: 2.2; }
+    .trouble-catch strong { color: var(--gold); font-weight: 400; display: block; font-size: clamp(1.1rem, 2vw, 1.55rem); margin-top: 8px; }
 
     /* ─── KNOWLEDGE ─── */
-    #knowledge {
-      background: var(--green-pale); padding: 80px 48px; text-align: center;
-    }
+    #knowledge { background: var(--dark2); padding: 80px 52px; text-align: center; }
 
     .knowledge-box {
       max-width: 760px; margin: 0 auto;
-      background: var(--white); border: 1px solid var(--border);
-      border-top: 4px solid var(--green); padding: 48px 48px;
+      background: var(--dark3); border: 1px solid var(--gold-border);
+      border-top: 3px solid var(--gold); padding: 52px 52px;
     }
-
-    .knowledge-tag {
-      display: inline-block; font-size: 0.68rem; letter-spacing: 0.2em;
-      color: var(--green); border: 1px solid var(--green-light);
-      padding: 4px 14px; border-radius: 20px; margin-bottom: 20px;
-    }
-
-    .knowledge-title {
-      font-family: 'Noto Serif JP', serif;
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
-      font-weight: 300; letter-spacing: 0.12em; color: var(--dark); margin-bottom: 24px; line-height: 1.7;
-    }
-
-    .knowledge-title em { font-style: normal; color: var(--green-deep); }
-
-    .knowledge-body { font-size: 0.87rem; color: var(--mid); line-height: 2.4; text-align: left; }
-    .knowledge-body strong { color: var(--green-deep); font-weight: 400; }
+    .knowledge-tag { display: inline-block; font-size: 0.67rem; letter-spacing: 0.2em; color: var(--gold); border: 1px solid var(--gold-border); padding: 4px 14px; border-radius: 20px; margin-bottom: 20px; }
+    .knowledge-title { font-family: 'Noto Serif JP', serif; font-size: clamp(1.05rem, 1.9vw, 1.45rem); font-weight: 300; letter-spacing: 0.12em; color: var(--white); margin-bottom: 24px; line-height: 1.75; }
+    .knowledge-title em { font-style: normal; color: var(--gold); }
+    .knowledge-body { font-size: 0.86rem; color: var(--soft); line-height: 2.4; text-align: left; }
+    .knowledge-body strong { color: var(--gold); font-weight: 400; }
 
     /* ─── AWARD BAND ─── */
     #award-band {
-      background: var(--green-deep); padding: 44px 48px;
+      background: var(--gold); padding: 44px 52px;
       display: flex; align-items: center; justify-content: center;
-      gap: 48px; flex-wrap: wrap;
+      gap: 52px; flex-wrap: wrap;
     }
-
-    .band-item { text-align: center; color: var(--white); }
-    .band-item .en { font-family: 'Cormorant Garamond', serif; font-size: 0.74rem; letter-spacing: 0.35em; color: var(--green-light); display: block; margin-bottom: 8px; text-transform: uppercase; }
-    .band-item .main { font-family: 'Noto Serif JP', serif; font-size: clamp(0.9rem, 1.7vw, 1.15rem); letter-spacing: 0.1em; }
-    .band-item .sub { font-size: 0.73rem; color: rgba(255,255,255,0.55); margin-top: 4px; letter-spacing: 0.1em; }
-    .band-sep { width: 1px; height: 56px; background: rgba(255,255,255,0.18); }
+    .band-item { text-align: center; color: var(--black); }
+    .band-item .en { font-family: 'Cormorant Garamond', serif; font-size: 0.72rem; letter-spacing: 0.35em; color: rgba(8,8,8,0.6); display: block; margin-bottom: 8px; text-transform: uppercase; }
+    .band-item .main { font-family: 'Noto Serif JP', serif; font-size: clamp(0.9rem, 1.7vw, 1.15rem); letter-spacing: 0.1em; font-weight: 400; }
+    .band-item .sub { font-size: 0.72rem; color: rgba(8,8,8,0.55); margin-top: 4px; letter-spacing: 0.1em; }
+    .band-sep { width: 1px; height: 56px; background: rgba(8,8,8,0.15); }
 
     /* ─── CONCEPT ─── */
-    #concept { background: var(--cream); padding: 100px 48px; }
+    #concept { background: var(--black); padding: 100px 52px; }
 
-    .concept-inner {
-      display: grid; grid-template-columns: 1fr 1fr;
-      max-width: 1100px; margin: 0 auto;
-    }
-
+    .concept-inner { display: grid; grid-template-columns: 1fr 1fr; max-width: 1100px; margin: 0 auto; }
     .concept-img { overflow: hidden; min-height: 520px; }
-    .concept-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+    .concept-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; filter: brightness(0.82) saturate(0.9); }
     .concept-img:hover img { transform: scale(1.04); }
 
     .concept-text {
-      padding: 64px 56px; background: var(--white);
+      padding: 64px 56px;
+      background: var(--dark2);
       display: flex; flex-direction: column; justify-content: center;
-      border-top: 4px solid var(--green);
+      border-top: 3px solid var(--gold);
     }
+    .concept-text p { font-size: 0.86rem; color: var(--soft); line-height: 2.4; margin-bottom: 16px; }
+    .concept-text p strong { color: var(--gold); font-weight: 400; }
 
-    .section-label {
-      font-family: 'Cormorant Garamond', serif; font-size: 0.74rem;
-      letter-spacing: 0.38em; color: var(--green); text-transform: uppercase;
-      display: block; margin-bottom: 18px;
-    }
+    /* ─── NURTURE ─── */
+    #skin-nurture { background: var(--dark1); padding: 100px 52px; }
 
-    .section-title {
-      font-family: 'Noto Serif JP', serif;
-      font-size: clamp(1.25rem, 2.1vw, 1.85rem);
-      font-weight: 300; letter-spacing: 0.12em;
-      color: var(--dark); line-height: 1.75; margin-bottom: 24px;
-    }
-
-    .section-divider { width: 36px; height: 2px; background: var(--green); margin-bottom: 24px; }
-
-    .concept-text p { font-size: 0.87rem; color: var(--mid); line-height: 2.4; margin-bottom: 16px; }
-    .concept-text p strong { color: var(--green-deep); font-weight: 400; }
-
-    /* ─── SKIN NURTURE ─── */
-    #skin-nurture { background: var(--green-pale); padding: 100px 48px; }
-
-    .nurture-header { text-align: center; margin-bottom: 60px; }
-    .nurture-header .section-divider { margin: 0 auto 0; }
-    .nurture-lead { font-size: 0.89rem; color: var(--mid); max-width: 500px; margin: 0 auto; line-height: 2.2; text-align: center; }
-
-    .nurture-steps {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 20px; max-width: 1000px; margin: 0 auto;
-    }
-
-    .nurture-step {
-      background: var(--white); padding: 44px 28px; text-align: center;
-      border-top: 3px solid var(--green);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .nurture-step:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(106,155,110,0.15); }
-
-    .step-num { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; color: var(--green-light); line-height: 1; margin-bottom: 14px; display: block; }
+    .nurture-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; max-width: 1000px; margin: 0 auto; }
+    .nurture-step { background: var(--dark2); padding: 48px 32px; text-align: center; border-top: 2px solid var(--gold); transition: background 0.3s; }
+    .nurture-step:hover { background: var(--dark3); }
+    .step-num { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; color: var(--gold-border); line-height: 1; margin-bottom: 14px; display: block; opacity: 0.6; }
     .step-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
-    .step-title { font-family: 'Noto Serif JP', serif; font-size: 0.98rem; font-weight: 400; letter-spacing: 0.1em; color: var(--dark); margin-bottom: 10px; }
-    .step-desc { font-size: 0.8rem; color: var(--mid); line-height: 2; }
+    .step-title { font-family: 'Noto Serif JP', serif; font-size: 0.95rem; font-weight: 400; letter-spacing: 0.1em; color: var(--white); margin-bottom: 10px; }
+    .step-desc { font-size: 0.79rem; color: var(--soft); line-height: 2; }
 
     /* ─── MENU ─── */
-    #menu { background: var(--white); padding: 100px 48px; }
+    #menu { background: var(--black); padding: 100px 52px; }
 
-    .menu-header { text-align: center; margin-bottom: 60px; }
-    .menu-header .section-divider { margin: 0 auto 0; }
+    .menu-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; max-width: 1100px; margin: 0 auto; }
+    .menu-card { background: var(--dark2); padding: 40px 30px; transition: background 0.3s; border-bottom: 1px solid var(--gold-border); }
+    .menu-card:hover { background: var(--dark3); }
+    .menu-tag { display: inline-block; font-size: 0.62rem; letter-spacing: 0.12em; padding: 3px 10px; border: 1px solid var(--gold); color: var(--gold); border-radius: 20px; margin-bottom: 10px; }
+    .menu-name { font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 400; letter-spacing: 0.1em; color: var(--white); margin-bottom: 10px; line-height: 1.65; }
+    .menu-category { font-size: 0.63rem; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; display: block; }
+    .menu-desc { font-size: 0.78rem; color: var(--soft); line-height: 2; margin-bottom: 18px; }
+    .menu-price { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--gold); }
+    .menu-price small { font-family: 'Noto Sans JP', sans-serif; font-size: 0.67rem; color: var(--mid); }
 
-    .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 1100px; margin: 0 auto; }
+    /* ─── PRODUCTS ─── */
+    #products { background: var(--dark1); padding: 100px 52px; text-align: center; }
 
-    .menu-card { background: var(--green-pale); padding: 40px 28px; transition: background 0.3s; }
-    .menu-card:hover { background: #daeada; }
-
-    .menu-tag { display: inline-block; font-size: 0.64rem; letter-spacing: 0.12em; padding: 3px 10px; background: var(--green); color: var(--white); border-radius: 20px; margin-bottom: 10px; }
-    .menu-name { font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 400; letter-spacing: 0.1em; color: var(--dark); margin-bottom: 10px; line-height: 1.6; }
-    .menu-category { font-size: 0.65rem; letter-spacing: 0.22em; color: var(--green); text-transform: uppercase; margin-bottom: 10px; display: block; }
-    .menu-desc { font-size: 0.79rem; color: var(--mid); line-height: 2; margin-bottom: 18px; }
-    .menu-price { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--dark); }
-    .menu-price small { font-family: 'Noto Sans JP', sans-serif; font-size: 0.68rem; color: var(--mid); }
+    .products-grid { display: flex; gap: 2px; justify-content: center; max-width: 900px; margin: 0 auto 52px; flex-wrap: wrap; }
+    .product-card { background: var(--dark2); border-top: 2px solid var(--gold); padding: 40px 32px; flex: 1; min-width: 200px; max-width: 280px; text-align: center; transition: background 0.3s; }
+    .product-card:hover { background: var(--dark3); }
+    .product-card .icon { font-size: 2.4rem; margin-bottom: 16px; display: block; }
+    .product-card .name { font-family: 'Noto Serif JP', serif; font-size: 0.92rem; color: var(--white); letter-spacing: 0.1em; margin-bottom: 10px; }
+    .product-card .desc { font-size: 0.76rem; color: var(--soft); line-height: 2; }
 
     /* ─── STAFF ─── */
-    #staff { background: var(--cream); padding: 100px 48px; }
+    #staff { background: var(--black); padding: 100px 52px; }
 
-    .staff-inner {
-      display: grid; grid-template-columns: 400px 1fr;
-      max-width: 1000px; margin: 0 auto;
-      border: 1px solid var(--border); overflow: hidden;
-    }
+    .staff-inner { display: grid; grid-template-columns: 420px 1fr; max-width: 1000px; margin: 0 auto; border: 1px solid var(--gold-border); overflow: hidden; }
+    .staff-img { position: relative; height: 580px; overflow: hidden; }
+    .staff-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: brightness(0.88) saturate(0.92); }
+    .staff-img-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 28px; background: linear-gradient(transparent, rgba(8,8,8,0.8)); }
+    .staff-img-overlay .name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 0.22em; color: var(--white); display: block; }
+    .staff-img-overlay .tag  { font-size: 0.62rem; letter-spacing: 0.18em; color: var(--gold); margin-top: 4px; display: block; }
 
-    .staff-img { position: relative; height: 540px; overflow: hidden; }
-    .staff-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: brightness(0.93) saturate(1.05); }
+    .staff-body { padding: 56px 52px; background: var(--dark2); display: flex; flex-direction: column; justify-content: center; }
+    .staff-body p { font-size: 0.85rem; color: var(--soft); line-height: 2.4; margin-bottom: 14px; }
+    .staff-body p strong { color: var(--gold); font-weight: 400; }
 
-    .staff-img-overlay {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 20px 24px;
-      background: linear-gradient(transparent, rgba(45,70,45,0.7));
-    }
-    .staff-img-overlay .name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; letter-spacing: 0.2em; color: white; display: block; }
-    .staff-img-overlay .tag  { font-size: 0.64rem; letter-spacing: 0.15em; color: rgba(255,255,255,0.82); margin-top: 3px; display: block; }
+    .staff-awards { margin-top: 24px; padding: 20px 22px; border-left: 2px solid var(--gold); background: var(--dark3); }
+    .staff-awards li { font-size: 0.78rem; color: var(--soft); line-height: 2.1; list-style: none; }
+    .staff-awards li::before { content: "✦ "; color: var(--gold); font-size: 0.65rem; }
 
-    .staff-body { padding: 52px 48px; background: var(--white); display: flex; flex-direction: column; justify-content: center; }
-    .staff-body p { font-size: 0.86rem; color: var(--mid); line-height: 2.4; margin-bottom: 14px; }
+    /* ─── BLOG ─── */
+    #blog { background: var(--dark1); padding: 100px 52px; }
 
-    .staff-awards { margin-top: 20px; padding: 18px 20px; border-left: 2px solid var(--green); background: var(--green-pale); }
-    .staff-awards li { font-size: 0.79rem; color: var(--mid); line-height: 2; list-style: none; }
-    .staff-awards li::before { content: "✦ "; color: var(--green); font-size: 0.67rem; }
+    .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; max-width: 1100px; margin: 0 auto 48px; }
+    .blog-card { background: var(--dark2); padding: 36px 28px; border-top: 2px solid var(--gold-border); transition: background 0.3s, border-color 0.3s; cursor: default; }
+    .blog-card:hover { background: var(--dark3); border-top-color: var(--gold); }
+    .blog-date { font-size: 0.65rem; letter-spacing: 0.22em; color: var(--gold); margin-bottom: 10px; display: block; }
+    .blog-title { font-family: 'Noto Serif JP', serif; font-size: 0.95rem; color: var(--white); letter-spacing: 0.08em; margin-bottom: 12px; line-height: 1.7; }
+    .blog-desc { font-size: 0.76rem; color: var(--soft); line-height: 2; }
 
     /* ─── VOICE ─── */
-    #voice { background: var(--green-pale); padding: 100px 48px; }
+    #voice { background: var(--black); padding: 100px 52px; }
 
-    .voice-header { text-align: center; margin-bottom: 60px; }
-    .voice-header .section-divider { margin: 0 auto 0; }
-
-    .voice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto; }
-
-    .voice-card { background: var(--white); padding: 32px 26px; border-top: 3px solid var(--green); position: relative; }
-    .voice-card::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; color: var(--green-light); position: absolute; top: 6px; left: 18px; line-height: 1; }
-
-    .voice-badge { display: inline-block; font-size: 0.63rem; letter-spacing: 0.12em; color: var(--green); border: 1px solid var(--green-light); padding: 3px 10px; margin-bottom: 14px; border-radius: 20px; }
-    .voice-stars { color: var(--green); font-size: 0.8rem; margin-bottom: 6px; }
-    .voice-text { font-size: 0.83rem; color: var(--mid); line-height: 2.2; margin-bottom: 18px; padding-top: 14px; }
-    .voice-name { font-size: 0.76rem; color: var(--dark); }
+    .voice-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; max-width: 1100px; margin: 0 auto; }
+    .voice-card { background: var(--dark2); padding: 36px 28px; border-top: 2px solid var(--gold); position: relative; }
+    .voice-card::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 5rem; color: rgba(201,169,110,0.12); position: absolute; top: 6px; left: 18px; line-height: 1; }
+    .voice-badge { display: inline-block; font-size: 0.62rem; letter-spacing: 0.12em; color: var(--gold); border: 1px solid var(--gold-border); padding: 3px 10px; margin-bottom: 14px; border-radius: 20px; }
+    .voice-stars { color: var(--gold); font-size: 0.8rem; margin-bottom: 6px; }
+    .voice-text { font-size: 0.82rem; color: var(--soft); line-height: 2.2; margin-bottom: 18px; padding-top: 14px; }
+    .voice-name { font-size: 0.75rem; color: var(--white); }
     .voice-age  { font-size: 0.7rem; color: var(--mid); margin-left: 6px; }
 
     /* ─── NATURE ─── */
-    #nature { position: relative; height: 460px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-    #nature img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.06); transition: transform 8s ease; }
+    #nature { position: relative; height: 480px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    #nature img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.06); transition: transform 8s ease; filter: brightness(0.6) saturate(0.85); }
     #nature:hover img { transform: scale(1.0); }
-    .nature-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(30,60,30,0.4), rgba(30,60,30,0.2), rgba(30,60,30,0.45)); }
+    .nature-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(8,8,8,0.5), rgba(8,8,8,0.25), rgba(8,8,8,0.55)); }
     .nature-content { position: relative; z-index: 1; text-align: center; padding: 0 24px; }
-    .nature-content .quote { font-family: 'Noto Serif JP', serif; font-size: clamp(1.2rem, 2.3vw, 1.9rem); color: var(--white); letter-spacing: 0.2em; line-height: 2; font-weight: 300; text-shadow: 0 2px 16px rgba(0,0,0,0.3); margin-bottom: 14px; }
-    .nature-line { width: 44px; height: 1px; background: var(--green-light); margin: 0 auto 14px; opacity: 0.9; }
-    .nature-content .sub { font-size: 0.78rem; color: rgba(255,255,255,0.8); letter-spacing: 0.22em; }
+    .nature-content .quote { font-family: 'Noto Serif JP', serif; font-size: clamp(1.2rem, 2.3vw, 2rem); color: var(--white); letter-spacing: 0.22em; line-height: 2; font-weight: 300; margin-bottom: 16px; }
+    .nature-line { width: 48px; height: 1px; background: var(--gold); margin: 0 auto 16px; }
+    .nature-content .sub { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.28em; }
 
     /* ─── FLOW ─── */
-    #flow { background: var(--white); padding: 100px 48px; }
-
-    .flow-header { text-align: center; margin-bottom: 60px; }
-    .flow-header .section-divider { margin: 0 auto 0; }
+    #flow { background: var(--dark1); padding: 100px 52px; }
 
     .flow-steps { display: flex; max-width: 1000px; margin: 0 auto; position: relative; }
-    .flow-steps::before { content: ''; position: absolute; top: 32px; left: 8%; right: 8%; height: 1px; background: var(--green-light); }
+    .flow-steps::before { content: ''; position: absolute; top: 32px; left: 8%; right: 8%; height: 1px; background: var(--gold-border); }
     .flow-step { flex: 1; text-align: center; padding: 0 10px; position: relative; z-index: 1; }
-    .flow-circle { width: 64px; height: 64px; border-radius: 50%; background: var(--white); border: 1px solid var(--green); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--green); }
-    .flow-step h4 { font-family: 'Noto Serif JP', serif; font-size: 0.83rem; font-weight: 400; letter-spacing: 0.1em; color: var(--dark); margin-bottom: 6px; }
-    .flow-step p { font-size: 0.74rem; color: var(--mid); line-height: 1.8; }
+    .flow-circle { width: 64px; height: 64px; border-radius: 50%; background: var(--dark1); border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--gold); }
+    .flow-step h4 { font-family: 'Noto Serif JP', serif; font-size: 0.82rem; font-weight: 400; letter-spacing: 0.1em; color: var(--white); margin-bottom: 6px; }
+    .flow-step p { font-size: 0.73rem; color: var(--soft); line-height: 1.8; }
 
     /* ─── ACCESS ─── */
-    #access { background: var(--green-pale); padding: 100px 48px; }
+    #access { background: var(--black); padding: 100px 52px; }
 
-    .access-header { text-align: center; margin-bottom: 60px; }
-    .access-header .section-divider { margin: 0 auto 0; }
-
-    .access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; max-width: 1000px; margin: 0 auto; align-items: start; }
-
-    .access-name { font-family: 'Noto Serif JP', serif; font-size: 1.25rem; font-weight: 300; letter-spacing: 0.15em; color: var(--dark); margin-bottom: 24px; }
-
-    .info-row { display: flex; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--border); font-size: 0.83rem; }
-    .info-row .key { color: var(--green); font-size: 0.7rem; letter-spacing: 0.12em; min-width: 70px; padding-top: 2px; }
-    .info-row .val { color: var(--mid); line-height: 1.9; }
-
-    .map-box { background: linear-gradient(135deg, #d4e8d4 0%, #c0d8c0 100%); height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 2px; color: var(--mid); font-size: 0.78rem; letter-spacing: 0.12em; gap: 8px; }
-    .map-box span { font-size: 2rem; }
+    .access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; max-width: 1000px; margin: 0 auto; align-items: start; }
+    .access-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 0.22em; color: var(--white); margin-bottom: 28px; }
+    .info-row { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(201,169,110,0.12); font-size: 0.83rem; }
+    .info-row .key { color: var(--gold); font-size: 0.68rem; letter-spacing: 0.14em; min-width: 70px; padding-top: 2px; text-transform: uppercase; }
+    .info-row .val { color: var(--soft); line-height: 1.9; }
+    .map-box { background: var(--dark2); border: 1px solid var(--gold-border); height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--mid); font-size: 0.78rem; letter-spacing: 0.12em; gap: 10px; }
+    .map-box span { font-size: 2rem; opacity: 0.5; }
 
     /* ─── RESERVE ─── */
-    #reserve { background: var(--green-deep); padding: 100px 48px; text-align: center; }
+    #reserve { background: var(--dark2); padding: 100px 52px; text-align: center; border-top: 1px solid var(--gold-border); }
 
-    .reserve-label { font-family: 'Cormorant Garamond', serif; font-size: 0.76rem; letter-spacing: 0.38em; color: var(--green-light); text-transform: uppercase; display: block; margin-bottom: 18px; }
+    .reserve-label { font-family: 'Cormorant Garamond', serif; font-size: 0.74rem; letter-spacing: 0.42em; color: var(--gold); text-transform: uppercase; display: block; margin-bottom: 18px; }
     .reserve-title { font-family: 'Noto Serif JP', serif; font-size: clamp(1.2rem, 2vw, 1.7rem); font-weight: 300; letter-spacing: 0.15em; color: var(--white); margin-bottom: 14px; }
-    .reserve-divider { width: 36px; height: 1px; background: var(--green-light); margin: 0 auto 22px; }
-    .reserve-lead { font-size: 0.87rem; color: rgba(255,255,255,0.65); line-height: 2.2; margin-bottom: 44px; }
+    .reserve-divider { width: 40px; height: 1px; background: var(--gold); margin: 0 auto 24px; }
+    .reserve-lead { font-size: 0.86rem; color: var(--soft); line-height: 2.2; margin-bottom: 48px; }
 
-    .reserve-btn { display: inline-block; padding: 17px 52px; background: var(--white); color: var(--green-deep); text-decoration: none; font-size: 0.83rem; letter-spacing: 0.22em; border-radius: 2px; transition: all 0.3s; font-family: 'Noto Serif JP', serif; }
-    .reserve-btn:hover { background: var(--green-light); }
+    .reserve-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+    .reserve-btn-line { display: inline-block; padding: 17px 52px; background: var(--gold); color: var(--black); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.2em; transition: opacity 0.3s; }
+    .reserve-btn-line:hover { opacity: 0.85; }
+    .reserve-btn-hp { display: inline-block; padding: 17px 52px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.2em; transition: all 0.3s; }
+    .reserve-btn-hp:hover { background: var(--gold); color: var(--black); }
 
-    .reserve-tel { display: block; font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--white); letter-spacing: 0.1em; margin-top: 28px; text-decoration: none; }
-    .reserve-hours { font-size: 0.73rem; color: rgba(255,255,255,0.48); margin-top: 8px; letter-spacing: 0.12em; }
+    .reserve-tel { display: block; font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--white); letter-spacing: 0.1em; margin-top: 8px; text-decoration: none; }
+    .reserve-hours { font-size: 0.72rem; color: var(--mid); margin-top: 8px; letter-spacing: 0.12em; }
 
-    .sns-links { display: flex; justify-content: center; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
-    .sns-link { display: inline-block; padding: 10px 24px; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.78); text-decoration: none; font-size: 0.73rem; letter-spacing: 0.18em; border-radius: 2px; transition: all 0.3s; }
-    .sns-link:hover { border-color: var(--green-light); color: var(--white); background: rgba(255,255,255,0.08); }
+    .sns-links { display: flex; justify-content: center; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+    .sns-link { display: inline-block; padding: 9px 22px; border: 1px solid rgba(201,169,110,0.25); color: var(--soft); text-decoration: none; font-size: 0.7rem; letter-spacing: 0.16em; transition: all 0.3s; }
+    .sns-link:hover { border-color: var(--gold); color: var(--gold); }
 
     /* ─── FOOTER ─── */
-    footer { background: var(--dark); padding: 40px 48px; text-align: center; }
-    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; letter-spacing: 0.25em; color: var(--white); margin-bottom: 6px; }
-    .footer-logo small { display: block; font-size: 0.56rem; color: rgba(255,255,255,0.38); letter-spacing: 0.2em; font-family: 'Noto Sans JP', sans-serif; margin-top: 3px; }
-    .footer-links { display: flex; justify-content: center; gap: 28px; margin: 18px 0; flex-wrap: wrap; }
-    .footer-links a { font-size: 0.7rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.3s; }
-    .footer-links a:hover { color: var(--green-light); }
-    .copyright { font-size: 0.66rem; color: rgba(255,255,255,0.22); letter-spacing: 0.1em; }
+    footer { background: var(--black); padding: 48px 52px; text-align: center; border-top: 1px solid var(--gold-border); }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 0.28em; color: var(--white); margin-bottom: 6px; }
+    .footer-logo small { display: block; font-size: 0.52rem; color: var(--mid); letter-spacing: 0.2em; font-family: 'Noto Sans JP', sans-serif; margin-top: 4px; }
+    .footer-links { display: flex; justify-content: center; gap: 28px; margin: 20px 0; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.68rem; letter-spacing: 0.14em; color: var(--mid); text-decoration: none; transition: color 0.3s; text-transform: uppercase; }
+    .footer-links a:hover { color: var(--gold); }
+    .copyright { font-size: 0.64rem; color: rgba(255,255,255,0.18); letter-spacing: 0.1em; }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       header { padding: 14px 20px; }
       nav { display: none; }
       #hero { grid-template-columns: 1fr; }
-      .hero-right { min-height: 280px; }
-      .hero-left { padding: 44px 24px; }
+      .hero-right { min-height: 300px; }
+      .hero-left { padding: 48px 24px; }
       .concept-inner { grid-template-columns: 1fr; }
-      .concept-img { min-height: 240px; }
+      .concept-img { min-height: 250px; }
       .concept-text { padding: 40px 26px; }
-      .nurture-steps, .menu-grid, .voice-grid { grid-template-columns: 1fr; }
+      .nurture-steps, .menu-grid, .voice-grid, .blog-grid { grid-template-columns: 1fr; }
+      .products-grid { flex-direction: column; align-items: center; }
       .staff-inner { grid-template-columns: 1fr; }
-      .staff-img { height: 300px; }
-      .staff-body { padding: 36px 24px; }
+      .staff-img { height: 360px; }
+      .staff-body { padding: 40px 26px; }
       .access-grid { grid-template-columns: 1fr; }
       .flow-steps { flex-direction: column; gap: 20px; }
       .flow-steps::before { display: none; }
-      #trouble, #knowledge, #award-band, #concept, #skin-nurture,
-      #menu, #staff, #voice, #flow, #access, #reserve { padding: 60px 22px; }
       .band-sep { display: none; }
+      section, #trouble, #knowledge, #concept, #skin-nurture,
+      #menu, #products, #staff, #blog, #voice, #flow, #access, #reserve { padding: 64px 22px; }
       .knowledge-box { padding: 32px 24px; }
     }
   </style>
@@ -433,8 +388,8 @@
   <nav>
     <a href="#concept">Concept</a>
     <a href="#menu">Menu</a>
-    <a href="#staff">Staff</a>
     <a href="#products">Products</a>
+    <a href="#staff">Staff</a>
     <a href="#blog">Blog</a>
     <a href="#access">Access</a>
   </nav>
@@ -444,7 +399,7 @@
 <!-- ═══ HERO ═══ -->
 <section id="hero">
   <div class="hero-left">
-    <span class="hero-tag">ニキビ・肌質改善　肌育　専門サロン｜鹿児島市宇宿</span>
+    <span class="hero-tag">ニキビ・肌質改善　肌育　専門サロン</span>
     <h1 class="hero-title">
       皮ふ科では治らなかった<br>
       <em>ニキビ・ニキビ跡</em>が、<br>
@@ -456,19 +411,15 @@
       ニキビ・肌質改善・肌育の専門サロンです。
     </p>
     <div class="hero-cta">
-      <a href="#reserve" class="btn-primary">無料カウンセリング予約</a>
-      <a href="#menu" class="btn-outline">メニューを見る</a>
+      <a href="https://lin.ee/ZYcJxLJ" target="_blank" class="btn-gold">💬 LINEで予約</a>
+      <a href="https://beauty.hotpepper.jp/kr/slnH000667751/" target="_blank" class="btn-outline">🔖 ホットペッパー</a>
     </div>
     <div class="rea-badge">
-      <span class="icon">🌿</span>
-      <span class="text">リアボーテ 正規施術店　／　美人コンテスト 2025 全国総合優勝</span>
+      <span class="text">🌿 リアボーテ 正規施術店　／　美人コンテスト 2025 全国総合優勝</span>
     </div>
   </div>
   <div class="hero-right">
-    <img
-      src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=900&q=85"
-      alt="EPILOMA エステイメージ"
-    />
+    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=900&q=85" alt="EPILOMA エステイメージ" />
     <div class="hero-award">
       <span class="yr">2025</span>
       <span class="no">No.1</span>
@@ -502,14 +453,11 @@
 <section id="knowledge">
   <div class="knowledge-box">
     <span class="knowledge-tag">EPILOMA からのメッセージ</span>
-    <h2 class="knowledge-title">
-      「ニキビは自分で潰した方が早く治る」<br>
-      <em>それは、間違いです。</em>
-    </h2>
+    <h2 class="knowledge-title">「ニキビは自分で潰した方が早く治る」<br><em>それは、間違いです。</em></h2>
     <p class="knowledge-body">
       手の雑菌が毛穴に入り込み、炎症が悪化。さらに無理に潰すことで<strong>クレーター状のダメージ</strong>が残ってしまいます。<br><br>
       大切なのは、適切な時期に正しいケアと知識で<strong>「ニキビができない肌環境」を育てること。</strong><br><br>
-      EPILOMAでは、正しい知識と高品質なリアボーテコスメ・ハーブトリートメントで、肌の根本から変えるサポートをしています。一人で悩まず、まずはご相談ください。
+      EPILOMAでは、正しい知識とリアボーテコスメ・ハーブトリートメントで、肌の根本から変えるサポートをしています。
     </p>
   </div>
 </section>
@@ -539,39 +487,25 @@
 <section id="concept">
   <div class="concept-inner">
     <div class="concept-img">
-      <img
-        src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800&q=85"
-        alt="リアボーテ スキンケア"
-      />
+      <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800&q=85" alt="リアボーテ スキンケア" />
     </div>
     <div class="concept-text">
-      <span class="section-label">Concept</span>
-      <h2 class="section-title">肌を育てる、<br>という考え方</h2>
-      <div class="section-divider"></div>
-      <p>
-        ニキビや肌荒れは、肌からの「SOS」サインです。
-        症状を一時的に抑えるのではなく、<strong>なぜそうなるのかという根本原因</strong>にアプローチすることがEPILOMAの考え方です。
-      </p>
-      <p>
-        お一人おひとりの肌状態を丁寧に分析し、
-        リアボーテの上質なコスメ・ハーブトリートメント（ヒト幹細胞配合）・リンパドレナージュを組み合わせた、
-        <strong>あなただけのオーダーメイドケア</strong>をご提供します。
-      </p>
-      <p>
-        皮ふ科でも改善しなかった方、長年諦めていた方こそ、
-        ぜひ一度ご相談ください。
-      </p>
+      <span class="sec-label">Concept</span>
+      <h2 class="sec-title">肌を育てる、<br>という考え方</h2>
+      <div class="sec-div"></div>
+      <p>ニキビや肌荒れは、肌からの「SOS」サインです。症状を一時的に抑えるのではなく、<strong>なぜそうなるのかという根本原因</strong>にアプローチすることがEPILOMAの考え方です。</p>
+      <p>リアボーテの上質なコスメ・ハーブトリートメント（ヒト幹細胞配合）・リンパドレナージュを組み合わせた、<strong>あなただけのオーダーメイドケア</strong>をご提供します。</p>
+      <p>皮ふ科でも改善しなかった方、長年諦めていた方こそ、ぜひ一度ご相談ください。</p>
     </div>
   </div>
 </section>
 
-<!-- ═══ SKIN NURTURE ═══ -->
+<!-- ═══ NURTURE ═══ -->
 <section id="skin-nurture">
-  <div class="nurture-header">
-    <span class="section-label" style="display:block; text-align:center;">EPILOMA Method</span>
-    <h2 class="section-title" style="text-align:center;">肌育３ステップ</h2>
-    <div class="section-divider" style="margin:0 auto 20px;"></div>
-    <p class="nurture-lead">表面だけでなく、肌の奥から健やかに。<br>EPILOMAの肌育メソッドで、持続する美肌へ。</p>
+  <div style="text-align:center; margin-bottom:60px;">
+    <span class="sec-label">EPILOMA Method</span>
+    <h2 class="sec-title">肌育３ステップ</h2>
+    <div class="sec-div-center"></div>
   </div>
   <div class="nurture-steps">
     <div class="nurture-step">
@@ -584,30 +518,30 @@
       <span class="step-num">02</span>
       <span class="step-icon">🌿</span>
       <div class="step-title">根本からのアプローチ</div>
-      <p class="step-desc">リアボーテ・ハーブトリートメント（ヒト幹細胞）・リンパドレナージュで肌環境を整えます。</p>
+      <p class="step-desc">リアボーテ・ハーブトリートメント（ヒト幹細胞）・リンパドレナージュで整えます。</p>
     </div>
     <div class="nurture-step">
       <span class="step-num">03</span>
       <span class="step-icon">🏡</span>
       <div class="step-title">自宅ケアのサポート</div>
-      <p class="step-desc">正しいホームケアの方法もお伝えします。サロンと自宅のケアで相乗効果を。</p>
+      <p class="step-desc">正しいホームケアの方法もお伝えします。サロンと自宅の相乗効果で美肌へ。</p>
     </div>
   </div>
 </section>
 
 <!-- ═══ MENU ═══ -->
 <section id="menu">
-  <div class="menu-header">
-    <span class="section-label" style="display:block; text-align:center;">Menu</span>
-    <h2 class="section-title" style="text-align:center;">施術メニュー</h2>
-    <div class="section-divider" style="margin:0 auto 0;"></div>
+  <div style="text-align:center; margin-bottom:60px;">
+    <span class="sec-label">Menu</span>
+    <h2 class="sec-title">施術メニュー</h2>
+    <div class="sec-div-center"></div>
   </div>
   <div class="menu-grid">
     <div class="menu-card">
       <span class="menu-tag">人気 No.1</span>
       <div class="menu-name">ニキビ・ニキビ跡<br>集中改善コース</div>
       <span class="menu-category">Acne Treatment</span>
-      <p class="menu-desc">皮ふ科でも改善しなかったニキビに特化。炎症・跡・毛穴を同時にアプローチする集中ケアです。</p>
+      <p class="menu-desc">皮ふ科でも改善しなかったニキビに特化。炎症・跡・毛穴を同時にアプローチします。</p>
       <div class="menu-price">¥16,500<small>（税込）〜</small></div>
     </div>
     <div class="menu-card">
@@ -628,7 +562,7 @@
       <span class="menu-tag">肌質改善</span>
       <div class="menu-name">リアボーテ<br>肌質改善トリートメント</div>
       <span class="menu-category">Skin Improvement</span>
-      <p class="menu-desc">リアボーテ正規コスメで、くすみ・乾燥・毛穴を徹底ケア。透明感あふれる肌へ導きます。</p>
+      <p class="menu-desc">リアボーテ正規コスメで、くすみ・乾燥・毛穴を徹底ケア。透明感あふれる肌へ。</p>
       <div class="menu-price">¥15,000<small>（税込）〜</small></div>
     </div>
     <div class="menu-card">
@@ -648,38 +582,57 @@
   </div>
 </section>
 
+<!-- ═══ PRODUCTS ═══ -->
+<section id="products">
+  <div style="text-align:center; margin-bottom:56px;">
+    <span class="sec-label">Products</span>
+    <h2 class="sec-title">リアボーテ 公式プロダクト</h2>
+    <div class="sec-div-center"></div>
+    <p style="font-size:0.86rem; color:var(--soft); line-height:2.2; max-width:500px; margin:0 auto;">EPILOMAで使用しているリアボーテの上質なスキンケアコスメ。<br>ご自宅でもサロンクオリティのケアをお届けします。</p>
+  </div>
+  <div class="products-grid">
+    <div class="product-card">
+      <span class="icon">🌿</span>
+      <div class="name">スキンケアライン</div>
+      <p class="desc">洗顔・化粧水・美容液・クリームなど基本ライン</p>
+    </div>
+    <div class="product-card">
+      <span class="icon">✨</span>
+      <div class="name">ハーブ・幹細胞シリーズ</div>
+      <p class="desc">ヒト幹細胞配合のプレミアムライン</p>
+    </div>
+    <div class="product-card">
+      <span class="icon">💎</span>
+      <div class="name">ボディケアライン</div>
+      <p class="desc">全身の肌を整えるボディケアシリーズ</p>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:48px;">
+    <a href="https://relabeaute-japan.com/product/" target="_blank" class="btn-gold">リアボーテ 公式プロダクトを見る →</a>
+  </div>
+</section>
+
 <!-- ═══ STAFF ═══ -->
 <section id="staff">
   <div style="text-align:center; margin-bottom:56px;">
-    <span class="section-label" style="display:block;">Esthetician</span>
-    <h2 class="section-title">担当エステティシャン</h2>
-    <div class="section-divider" style="margin:0 auto;"></div>
+    <span class="sec-label">Esthetician</span>
+    <h2 class="sec-title">担当エステティシャン</h2>
+    <div class="sec-div-center"></div>
   </div>
   <div class="staff-inner">
     <div class="staff-img">
-      <img
-        src="miho.jpg"
-        alt="Miho エステティシャン"
-      />
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=85" alt="Miho エステティシャン" />
       <div class="staff-img-overlay">
         <span class="name">Miho</span>
         <span class="tag">Chief Esthetician / EPILOMA</span>
       </div>
     </div>
     <div class="staff-body">
-      <span class="section-label">Chief Esthetician</span>
-      <h3 class="section-title" style="font-size:1.5rem; margin-bottom:8px;">Miho</h3>
-      <div class="section-divider"></div>
-      <p>
-        「諦めないでください」——これが、お客様にいつも伝える言葉です。
-        皮ふ科に通い続けても変わらなかった肌が、正しいケアで少しずつ変わっていく。
-        その瞬間に立ち会えることが、この仕事の一番の喜びです。
-      </p>
-      <p>
-        ニキビができてしまうのは、肌環境が整っていないサインです。
-        表面だけを治すのではなく、<strong style="color:var(--green-deep); font-weight:400;">「なぜできるのか」という根本</strong>から向き合います。
-        どんな些細なお悩みでも、まずはお気軽にご相談ください。
-      </p>
+      <span class="sec-label">Chief Esthetician</span>
+      <h3 class="sec-title" style="font-size:1.6rem; margin-bottom:6px;">Miho</h3>
+      <div class="sec-div"></div>
+      <p>「諦めないでください」——これが、お客様にいつも伝える言葉です。皮ふ科に通い続けても変わらなかった肌が、正しいケアで少しずつ変わっていく。その瞬間に立ち会えることが、この仕事の一番の喜びです。</p>
+      <p>ニキビができてしまうのは、肌環境が整っていないサインです。表面だけを治すのではなく、<strong>「なぜできるのか」という根本</strong>から向き合います。どんな些細なお悩みでも、まずはお気軽にご相談ください。</p>
       <ul class="staff-awards">
         <li>リアボーテ 美人コンテスト 2025 全国総合 第１位</li>
         <li>リアボーテ 正規認定エステティシャン（最上位資格）</li>
@@ -690,12 +643,41 @@
   </div>
 </section>
 
+<!-- ═══ BLOG ═══ -->
+<section id="blog">
+  <div style="text-align:center; margin-bottom:56px;">
+    <span class="sec-label">Blog</span>
+    <h2 class="sec-title">Miho's ブログ</h2>
+    <div class="sec-div-center"></div>
+    <p style="font-size:0.86rem; color:var(--soft); line-height:2.2; max-width:480px; margin:0 auto;">肌のこと、ケアのこと、日々のことを綴ります。<br>正しい知識があなたの肌育てのヒントになれれば嬉しいです。</p>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <span class="blog-date">2025.04 — ニキビケア</span>
+      <div class="blog-title">ニキビは絶対に<br>自分で潰さないで</div>
+      <p class="blog-desc">正しいケアの知識と、なぜ悪化してしまうのかについて詳しく解説します。</p>
+    </div>
+    <div class="blog-card">
+      <span class="blog-date">2025.03 — 肌育</span>
+      <div class="blog-title">「肌を育てる」って<br>どういうこと？</div>
+      <p class="blog-desc">EPILOMAが大切にしている「肌育」という考え方についてお話しします。</p>
+    </div>
+    <div class="blog-card" style="display:flex; align-items:center; justify-content:center; flex-direction:column; text-align:center;">
+      <div style="font-size:2rem; margin-bottom:16px; color:rgba(201,169,110,0.3);">✍️</div>
+      <div class="blog-title" style="font-size:0.85rem; color:var(--soft);">続々と更新予定！<br>Instagramも<br>チェックしてください</div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:44px;">
+    <a href="https://www.instagram.com/p/C4ec3gfvaNF/" target="_blank" class="btn-outline">📷 Instagram でも発信中</a>
+  </div>
+</section>
+
 <!-- ═══ VOICE ═══ -->
 <section id="voice">
-  <div class="voice-header">
-    <span class="section-label" style="display:block;">Customer Voice</span>
-    <h2 class="section-title" style="text-align:center;">お客様の声</h2>
-    <div class="section-divider" style="margin:0 auto 0;"></div>
+  <div style="text-align:center; margin-bottom:56px;">
+    <span class="sec-label">Customer Voice</span>
+    <h2 class="sec-title">お客様の声</h2>
+    <div class="sec-div-center"></div>
   </div>
   <div class="voice-grid">
     <div class="voice-card">
@@ -721,97 +703,27 @@
 
 <!-- ═══ NATURE ═══ -->
 <div id="nature">
-  <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=1600&q=85" alt="タイ ピピ島の風景" />
+  <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1600&q=85" alt="リアボーテ イメージ" />
   <div class="nature-overlay"></div>
   <div class="nature-content">
     <p class="quote">肌が変わると、<br>生き方が変わる。</p>
     <div class="nature-line"></div>
-    <p class="sub">EPILOMA — 肌を育てるサロン｜鹿児島市宇宿</p>
+    <p class="sub">EPILOMA — 肌を育てるサロン</p>
   </div>
 </div>
 
-<!-- ═══ PRODUCTS ═══ -->
-<section id="products" style="background:var(--white); padding:100px 48px; text-align:center;">
-  <span class="section-label" style="display:block;">Products</span>
-  <h2 class="section-title">リアボーテ 公式プロダクト</h2>
-  <div class="section-divider" style="margin:0 auto 24px;"></div>
-  <p style="font-size:0.88rem; color:var(--mid); line-height:2.2; max-width:520px; margin:0 auto 48px;">
-    EPILOMAで使用しているリアボーテの上質なスキンケアコスメ。<br>
-    天然由来成分・ノンパラベン処方で、肌に優しく確かな効果を。<br>
-    ご自宅でもサロンクオリティのケアをお届けします。
-  </p>
-  <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; max-width:900px; margin:0 auto 48px;">
-    <div style="background:var(--green-pale); border:1px solid var(--border); border-top:3px solid var(--green); padding:36px 32px; flex:1; min-width:200px; max-width:260px; text-align:center;">
-      <div style="font-size:2.4rem; margin-bottom:16px;">🌿</div>
-      <div style="font-family:'Noto Serif JP',serif; font-size:0.95rem; color:var(--dark); letter-spacing:0.1em; margin-bottom:10px;">スキンケアライン</div>
-      <div style="font-size:0.78rem; color:var(--mid); line-height:2;">洗顔・化粧水・美容液・<br>クリームなど</div>
-    </div>
-    <div style="background:var(--green-pale); border:1px solid var(--border); border-top:3px solid var(--green); padding:36px 32px; flex:1; min-width:200px; max-width:260px; text-align:center;">
-      <div style="font-size:2.4rem; margin-bottom:16px;">✨</div>
-      <div style="font-family:'Noto Serif JP',serif; font-size:0.95rem; color:var(--dark); letter-spacing:0.1em; margin-bottom:10px;">ハーブ・幹細胞シリーズ</div>
-      <div style="font-size:0.78rem; color:var(--mid); line-height:2;">ヒト幹細胞配合の<br>プレミアムライン</div>
-    </div>
-    <div style="background:var(--green-pale); border:1px solid var(--border); border-top:3px solid var(--green); padding:36px 32px; flex:1; min-width:200px; max-width:260px; text-align:center;">
-      <div style="font-size:2.4rem; margin-bottom:16px;">💎</div>
-      <div style="font-family:'Noto Serif JP',serif; font-size:0.95rem; color:var(--dark); letter-spacing:0.1em; margin-bottom:10px;">ボディケアライン</div>
-      <div style="font-size:0.78rem; color:var(--mid); line-height:2;">全身の肌を整える<br>ボディケアシリーズ</div>
-    </div>
-  </div>
-  <a href="https://relabeaute-japan.com/product/" target="_blank"
-     style="display:inline-block; padding:16px 52px; background:var(--green); color:var(--white); text-decoration:none; font-size:0.82rem; letter-spacing:0.22em; border-radius:2px; transition:background 0.3s;"
-     onmouseover="this.style.background='var(--green-mid)'" onmouseout="this.style.background='var(--green)'">
-    リアボーテ 公式プロダクトを見る →
-  </a>
-</section>
-
-<!-- ═══ BLOG ═══ -->
-<section id="blog" style="background:var(--green-pale); padding:100px 48px;">
-  <div style="text-align:center; margin-bottom:56px;">
-    <span class="section-label" style="display:block;">Blog</span>
-    <h2 class="section-title">Miho's ブログ</h2>
-    <div class="section-divider" style="margin:0 auto 20px;"></div>
-    <p style="font-size:0.88rem; color:var(--mid); line-height:2.2; max-width:500px; margin:0 auto;">
-      肌のこと、ケアのこと、日々のことを綴ります。<br>
-      正しい知識で、あなたの肌育てのヒントになれれば嬉しいです。
-    </p>
-  </div>
-  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:1100px; margin:0 auto 48px;">
-    <div style="background:var(--white); padding:32px 28px; border-top:3px solid var(--green);">
-      <div style="font-size:0.68rem; letter-spacing:0.2em; color:var(--green); margin-bottom:10px;">2025.04 — ニキビケア</div>
-      <div style="font-family:'Noto Serif JP',serif; font-size:0.95rem; color:var(--dark); letter-spacing:0.08em; margin-bottom:12px; line-height:1.7;">ニキビは絶対に<br>自分で潰さないで</div>
-      <p style="font-size:0.78rem; color:var(--mid); line-height:2;">正しいケアの知識と、なぜ悪化してしまうのかについて詳しく解説します。</p>
-    </div>
-    <div style="background:var(--white); padding:32px 28px; border-top:3px solid var(--green);">
-      <div style="font-size:0.68rem; letter-spacing:0.2em; color:var(--green); margin-bottom:10px;">2025.03 — 肌育</div>
-      <div style="font-family:'Noto Serif JP',serif; font-size:0.95rem; color:var(--dark); letter-spacing:0.08em; margin-bottom:12px; line-height:1.7;">「肌を育てる」って<br>どういうこと？</div>
-      <p style="font-size:0.78rem; color:var(--mid); line-height:2;">EPILOMAが大切にしている「肌育」という考え方についてお話しします。</p>
-    </div>
-    <div style="background:var(--white); padding:32px 28px; border-top:3px solid var(--green); display:flex; align-items:center; justify-content:center; flex-direction:column; text-align:center;">
-      <div style="font-size:2rem; margin-bottom:16px; color:var(--green-light);">✍️</div>
-      <div style="font-family:'Noto Serif JP',serif; font-size:0.9rem; color:var(--mid); letter-spacing:0.1em; line-height:2;">続々と更新予定！<br>Instagramも<br>チェックしてください</div>
-    </div>
-  </div>
-  <div style="text-align:center;">
-    <a href="https://www.instagram.com/p/C4ec3gfvaNF/" target="_blank"
-       style="display:inline-block; padding:14px 44px; border:1px solid var(--green); color:var(--green); text-decoration:none; font-size:0.8rem; letter-spacing:0.2em; border-radius:2px; transition:all 0.3s;"
-       onmouseover="this.style.background='var(--green)'; this.style.color='white';" onmouseout="this.style.background='transparent'; this.style.color='var(--green)';">
-      📷 Instagram でも発信中
-    </a>
-  </div>
-</section>
-
 <!-- ═══ FLOW ═══ -->
 <section id="flow">
-  <div class="flow-header">
-    <span class="section-label" style="display:block; text-align:center;">Flow</span>
-    <h2 class="section-title" style="text-align:center;">ご来店の流れ</h2>
-    <div class="section-divider" style="margin:0 auto 60px;"></div>
+  <div style="text-align:center; margin-bottom:60px;">
+    <span class="sec-label">Flow</span>
+    <h2 class="sec-title">ご来店の流れ</h2>
+    <div class="sec-div-center"></div>
   </div>
   <div class="flow-steps">
     <div class="flow-step">
       <div class="flow-circle">01</div>
       <h4>ご予約</h4>
-      <p>LINE・ホットペッパー<br>またはお電話で</p>
+      <p>LINE・ホットペッパーから</p>
     </div>
     <div class="flow-step">
       <div class="flow-circle">02</div>
@@ -838,45 +750,27 @@
 
 <!-- ═══ ACCESS ═══ -->
 <section id="access">
-  <div class="access-header">
-    <span class="section-label" style="display:block; text-align:center;">Access</span>
-    <h2 class="section-title" style="text-align:center;">店舗情報・アクセス</h2>
-    <div class="section-divider" style="margin:0 auto 60px;"></div>
+  <div style="text-align:center; margin-bottom:60px;">
+    <span class="sec-label">Access</span>
+    <h2 class="sec-title">店舗情報・アクセス</h2>
+    <div class="sec-div-center"></div>
   </div>
   <div class="access-grid">
     <div>
-      <div class="access-name">EPILOMA（エピロマ）</div>
+      <div class="access-name">EPILOMA</div>
+      <div class="info-row"><span class="key">Address</span><span class="val">鹿児島市宇宿１丁目</span></div>
+      <div class="info-row"><span class="key">Tel</span><span class="val">000-000-0000</span></div>
+      <div class="info-row"><span class="key">Hours</span><span class="val">10:00 〜 19:00（最終受付 18:00）</span></div>
+      <div class="info-row"><span class="key">Close</span><span class="val">毎週月曜日・不定休</span></div>
       <div class="info-row">
-        <span class="key">住所</span>
-        <span class="val">鹿児島市宇宿１丁目</span>
-      </div>
-      <div class="info-row">
-        <span class="key">TEL</span>
-        <span class="val">000-000-0000</span>
-      </div>
-      <div class="info-row">
-        <span class="key">営業時間</span>
-        <span class="val">10:00 〜 19:00（最終受付 18:00）</span>
-      </div>
-      <div class="info-row">
-        <span class="key">定休日</span>
-        <span class="val">毎週月曜日・不定休</span>
-      </div>
-      <div class="info-row">
-        <span class="key">予約</span>
+        <span class="key">Reserve</span>
         <span class="val">
-          <a href="https://lin.ee/ZYcJxLJ" target="_blank" style="color:var(--green); text-decoration:none; display:block;">💬 公式LINE →</a>
-          <a href="https://beauty.hotpepper.jp/kr/slnH000667751/" target="_blank" style="color:var(--green); text-decoration:none; display:block; margin-top:4px;">🔖 ホットペッパービューティー →</a>
+          <a href="https://lin.ee/ZYcJxLJ" target="_blank" style="color:var(--gold); text-decoration:none; display:block;">💬 公式LINE →</a>
+          <a href="https://beauty.hotpepper.jp/kr/slnH000667751/" target="_blank" style="color:var(--gold); text-decoration:none; display:block; margin-top:4px;">🔖 ホットペッパービューティー →</a>
         </span>
       </div>
-      <div class="info-row">
-        <span class="key">Instagram</span>
-        <span class="val"><a href="https://www.instagram.com/p/C4ec3gfvaNF/" target="_blank" style="color:var(--green); text-decoration:none;">@epiloma_kagoshima →</a></span>
-      </div>
-      <div class="info-row">
-        <span class="key">Products</span>
-        <span class="val"><a href="https://relabeaute-japan.com/product/" target="_blank" style="color:var(--green); text-decoration:none;">リアボーテ 公式プロダクト →</a></span>
-      </div>
+      <div class="info-row"><span class="key">SNS</span><span class="val"><a href="https://www.instagram.com/p/C4ec3gfvaNF/" target="_blank" style="color:var(--gold); text-decoration:none;">📷 Instagram →</a></span></div>
+      <div class="info-row"><span class="key">Products</span><span class="val"><a href="https://relabeaute-japan.com/product/" target="_blank" style="color:var(--gold); text-decoration:none;">🌿 リアボーテ 公式 →</a></span></div>
     </div>
     <div class="map-box">
       <span>🗺️</span>
@@ -892,16 +786,11 @@
   <div class="reserve-divider"></div>
   <p class="reserve-lead">
     無料カウンセリングは随時受付中。<br>
-    肌のお悩み、どんな些細なことでもお気軽にご相談ください。<br>
-    LINE・ホットペッパー・お電話でご予約いただけます。
+    肌のお悩み、どんな些細なことでもお気軽にご相談ください。
   </p>
-  <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:16px;">
-    <a href="https://lin.ee/ZYcJxLJ" target="_blank" class="reserve-btn" style="background:var(--white); color:var(--green-deep);">
-      💬 LINE で予約する
-    </a>
-    <a href="https://beauty.hotpepper.jp/kr/slnH000667751/" target="_blank" class="reserve-btn" style="background:rgba(255,255,255,0.15); color:var(--white); border:1px solid rgba(255,255,255,0.4);">
-      🔖 ホットペッパーで予約
-    </a>
+  <div class="reserve-btns">
+    <a href="https://lin.ee/ZYcJxLJ" target="_blank" class="reserve-btn-line">💬 LINEで予約する</a>
+    <a href="https://beauty.hotpepper.jp/kr/slnH000667751/" target="_blank" class="reserve-btn-hp">🔖 ホットペッパーで予約</a>
   </div>
   <a href="tel:000-000-0000" class="reserve-tel">000-000-0000</a>
   <p class="reserve-hours">受付時間 10:00 〜 18:00（月曜定休）</p>
@@ -922,8 +811,9 @@
   <div class="footer-links">
     <a href="#concept">Concept</a>
     <a href="#menu">Menu</a>
+    <a href="#products">Products</a>
     <a href="#staff">Staff</a>
-    <a href="#voice">Voice</a>
+    <a href="#blog">Blog</a>
     <a href="#access">Access</a>
     <a href="#reserve">Reservation</a>
   </div>
